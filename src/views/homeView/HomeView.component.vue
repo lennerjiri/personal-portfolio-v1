@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="loading"></div>
 </template>
+
+<style></style>

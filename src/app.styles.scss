@@ -1,0 +1,11 @@
+.root {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: bisque;
+  position: relative;
+}
+
+.root-scrollOff {
+  height: 100vh;
+  overflow: hidden;
+}

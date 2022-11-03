@@ -1,0 +1,18 @@
+.root__loading {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  right: 0;
+
+  svg {
+    width: 8rem;
+    height: 8rem;
+  }
+}
