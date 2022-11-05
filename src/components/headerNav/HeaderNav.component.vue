@@ -53,6 +53,35 @@
 
 <script setup>
 import HamburgerMenu from "@/assets/img/svgHamburgerMenu.component.vue";
+import { gsap } from "gsap";
+
+let previousScroll = null;
+
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition === 0) {
+    gsap.to("header", {
+      y: 0,
+      duration: 0.5,
+      ease: "power4.out",
+    });
+  } else if (scrollPosition < previousScroll) {
+    gsap.to("header", {
+      y: 0,
+      duration: 0.5,
+      ease: "power4.out",
+    });
+    previousScroll = scrollPosition;
+  } else {
+    gsap.to("header", {
+      y: -80,
+      duration: 0.5,
+      ease: "power4.out",
+    });
+    previousScroll = scrollPosition;
+  }
+});
 </script>
 
 <style lang="scss" scoped>

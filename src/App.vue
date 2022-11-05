@@ -46,6 +46,9 @@ const offLoadingCompleted = () => {
   // close the loading screen
   loading.value = false;
 };
+
+// Animation
+// Scroll and top menu snap
 </script>
 
 <template>
@@ -57,6 +60,12 @@ const offLoadingCompleted = () => {
     />
     <HeaderNav />
     <main>
+      <div style="height: 500px"></div>
+      <div style="height: 500px"></div>
+      <div style="height: 500px"></div>
+      <div style="height: 500px"></div>
+      <div style="height: 500px"></div>
+      <div style="height: 500px"></div>
       <RouterView />
     </main>
     <div class="root__social-networks">
