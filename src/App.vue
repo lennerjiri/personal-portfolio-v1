@@ -60,6 +60,12 @@ const offLoadingCompleted = () => {
     <main>
       <RouterView />
     </main>
+    <div class="root__social-networks">
+      <div class="social-networks__line">
+        <font-awesome-icon icon="fa-brands fa-twitter" />
+      </div>
+    </div>
+    <div class="root__email"></div>
     <footer></footer>
   </div>
 </template>
