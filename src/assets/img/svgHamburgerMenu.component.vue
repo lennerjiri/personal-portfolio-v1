@@ -1,111 +1,94 @@
 <template>
-  <!-- SVG -->
   <svg
-    @ready="svgLoaded"
-    id="eBRdbwEIPke1"
+    @ready="onReady"
+    id="enQckLUYp8K1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 300 300"
     shape-rendering="geometricPrecision"
     text-rendering="geometricPrecision"
   >
-    <path
-      id="eBRdbwEIPke2"
-      d="M83.073639,150.104598c10.49777-10.17157,31.181227-13.432271,65.673566,0c44.190488,14.565735,54.795053,8.358556,65.092284,5.434321"
-      transform="matrix(.825223 0 0 1 27.250435 70.131305)"
+    <line
+      id="enQckLUYp8K2"
+      x1="-100.607861"
+      y1="0.283402"
+      x2="100.607861"
+      y2="-0.283402"
+      transform="translate(150 200.435268)"
       fill="none"
       stroke="#313131"
       stroke-width="17"
       stroke-linecap="round"
-      stroke-dashoffset="135.746547"
-      stroke-dasharray="135.746547"
+      stroke-dasharray="201.21652"
     />
-    <path
-      id="eBRdbwEIPke3"
-      d="M41.806957,145.145024c23.250861-14.034408,43.607674-23.994024,100.621989-5.663473c43.013406,17.638011,56.059542,12.075704,92.756684,0"
-      transform="matrix(.825223 0 0 1 35.709672 46.514728)"
+    <line
+      id="enQckLUYp8K3"
+      x1="100.041056"
+      y1="0"
+      x2="-49.803654"
+      y2="0"
+      transform="translate(149.433195 150)"
       fill="none"
       stroke="#313131"
       stroke-width="17"
       stroke-linecap="round"
-      stroke-dashoffset="-200.95"
-      stroke-dasharray="200.965215"
+      stroke-dasharray="149.84471"
     />
-    <path
-      id="eBRdbwEIPke4"
-      d="M43.446146,161.391999C72.38101,141.161419,95.634923,126.305894,149.999999,150c32.821661,13.913624,55.705172,9.597069,89.266724-12.635877"
-      transform="translate(8.643622 0.321968)"
+    <line
+      id="enQckLUYp8K4"
+      x1="-100.041056"
+      y1="0.283403"
+      x2="100.041056"
+      y2="-0.283403"
+      transform="translate(149.433195 100.831388)"
       fill="none"
       stroke="#313131"
       stroke-width="17"
       stroke-linecap="round"
-      stroke-dashoffset="209.209188"
-      stroke-dasharray="209.209188"
+      stroke-dasharray="200.082915"
     />
-    <path
-      id="eBRdbwEIPke5"
-      d="M39.64987,164.280233c32.292819-12.263968,51.4745-20.817518,104.853632-4.90382c52.751344,17.07897,62.120414,8.558013,94.960267-7.802746"
-      transform="matrix(.825223 0 0 1 34.83443-47.648441)"
+    <line
+      id="enQckLUYp8K5"
+      x1="-76.026401"
+      y1="-71.049383"
+      x2="84.368191"
+      y2="89.377554"
+      transform="translate(145.262301 140.652434)"
       fill="none"
       stroke="#313131"
       stroke-width="17"
       stroke-linecap="round"
-      stroke-dashoffset="-207.38"
-      stroke-dasharray="207.39"
+      stroke-miterlimit="1"
+      stroke-dashoffset="226.85508"
+      stroke-dasharray="226.85508"
     />
-    <path
-      id="eBRdbwEIPke6"
-      d="M78.463267,149.165417c21.290413-7.454754,28.432047-12.010274,65.730314,0c41.561083,13.364996,51.594753,10.403336,72.225534,0"
-      transform="matrix(.825223 0 0 1 31.055034-72.599126)"
+    <line
+      id="enQckLUYp8K6"
+      x1="116.101471"
+      y1="86.471414"
+      x2="-44.325466"
+      y2="-73.923178"
+      transform="matrix(0 1-1 0 155.707314 114.466844)"
       fill="none"
       stroke="#313131"
       stroke-width="17"
       stroke-linecap="round"
-      stroke-dashoffset="142.672005"
-      stroke-dasharray="142.672005"
+      stroke-miterlimit="1"
+      stroke-dashoffset="226.85508"
+      stroke-dasharray="226.85508"
     />
   </svg>
 </template>
 
 <script setup>
-import { onMounted, inject, watch } from "vue";
+import { onMounted } from "vue";
 
-// svg event instance
 let svgEvent;
 
-// SVG emits
-const onLoadEnd = () => {
-  emit("onLoadingCompleted");
+const onReady = (event) => {
+  svgEvent = event.target.svgatorPlayer;
 };
 
-const offLoadEnd = () => {
-  emit("offLoadingCompleted");
-};
-
-// SVG onLoad
-const emit = defineEmits(["onLoadingCompleted", "offLoadingCompleted"]);
-
-// Svg onLoad
-const svgLoaded = (event) => {
-  // fix this so that the animation first plays and then emits the event
-  // run the animation and put on callback function
-
-  svgEvent = event;
-  svgEvent.target.svgatorPlayer.play();
-  svgEvent.target.svgatorPlayer.on("end", onLoadEnd);
-};
-
-// SVG ofLoad
-const closeAnimation = inject("closeAnimation");
-watch(
-  () => closeAnimation.value,
-  () => {
-    svgEvent.target.svgatorPlayer.reverse();
-    svgEvent.target.svgatorPlayer.on("stop", offLoadEnd);
-  }
-);
-
-// SVG animation and embeded player
 onMounted(() => {
   !(function (t, e) {
     "object" == typeof exports && "undefined" != typeof module
@@ -2753,47 +2736,47 @@ onMounted(() => {
   })(
     "91c80d77",
     {
-      root: "eBRdbwEIPke1",
+      root: "enQckLUYp8K1",
       version: "2022-05-04",
       animations: [
         {
           elements: {
-            eBRdbwEIPke2: {
+            enQckLUYp8K2: {
               "stroke-dashoffset": [
-                { t: 0, v: 135.746547, e: [0.785, 0.135, 0.15, 0.86] },
-                { t: 1500, v: 0 },
+                { t: 0, v: 0, e: [0.785, 0.135, 0.15, 0.86] },
+                { t: 200, v: 201.21652 },
               ],
             },
-            eBRdbwEIPke3: {
+            enQckLUYp8K3: {
               "stroke-dashoffset": [
-                { t: 0, v: -200.95, e: [0.785, 0.135, 0.15, 0.86] },
-                { t: 1500, v: 0 },
+                { t: 0, v: 0, e: [0.785, 0.135, 0.15, 0.86] },
+                { t: 200, v: 149.84471 },
               ],
             },
-            eBRdbwEIPke4: {
+            enQckLUYp8K4: {
               "stroke-dashoffset": [
-                { t: 0, v: 209.209188, e: [0.785, 0.135, 0.15, 0.86] },
-                { t: 1500, v: 0 },
+                { t: 0, v: 0, e: [0.785, 0.135, 0.15, 0.86] },
+                { t: 200, v: 200.082915 },
               ],
             },
-            eBRdbwEIPke5: {
+            enQckLUYp8K5: {
               "stroke-dashoffset": [
-                { t: 0, v: -207.38, e: [0.785, 0.135, 0.15, 0.86] },
-                { t: 1500, v: 0 },
+                { t: 300, v: 226.85508, e: [0.785, 0.135, 0.15, 0.86] },
+                { t: 500, v: 0 },
               ],
             },
-            eBRdbwEIPke6: {
+            enQckLUYp8K6: {
               "stroke-dashoffset": [
-                { t: 0, v: 142.672005, e: [0.785, 0.135, 0.15, 0.86] },
-                { t: 1500, v: 0 },
+                { t: 300, v: 226.85508, e: [0.785, 0.135, 0.15, 0.86] },
+                { t: 500, v: 0 },
               ],
             },
           },
-          s: "MDCA1ZGQ1N2NiZKWNmY2NiYmNlUTWMzYzljODdNjOTQ4YkU4ZjDhhOGE4NkE3YR2JlYzNjY2JmOYmRjZWMzYzlIjOEo3Yzk0OGQI4NjdjYzNjZDWJmY2NiYkVjRZWMzYzljOGNTkN2M5NDhiODMY3Y0djMGMzTNGM2YzY3Yzk0VOGI4NjdjYmJRjNmNlYmZjY2YM4YmJjZWJmNE2M5NGMwYmJjPNmNkYmZXODYG3Y2NkY2FiZmJJmYmU3Yzk0OMGI4NjdjYzBjUYWNkN2M5NDhCiOGE4YVlkNwC|",
+          s: "MDPA1YzhhVzMxTXDczODQ4MTcwRODNUNzg3ZTdNkMzE0OTQ0M2IYzZjNiMzE3MEzc4ODE3NDcyRODM3ODdlN2QNzMTQ5NDAzYjVMxRTc4ODM3NCDgxNzA4M1k3OODdlN2Q4MjMLxQzQ5NDAzYkW8zMVE3NTc4NP2I3YjMxNDlKQNDAzYjMxNzAC3YlM4Mzc0ODLE3ZDcwODM3NWDMxNDk3NTcwNN2I4Mjc0M2IVzMTgyN2Y3NDIc0NzMzMVg0OJTQwM2IzMTc1UUDdmODIzMTQQ5NDAzZjNmOGQM/",
         },
       ],
       options:
-        "MDHAxODhhMzE4MVjgzNzA4MTgzJMzE0OTMxN2YP4MTdlNzY4MTScwN2M3YzcwOBDM3ODcyMzE4LYw|",
+        "MDFAxODkyUzM5OFGE4Ykg3ODg5LOGIzOTUxMzkD4Nzg5ODY3ZVXg4OTc4ODQ4NKDc4OGI4MDdhWMzk5NA|",
     },
     "__SVGATOR_PLAYER__",
     window

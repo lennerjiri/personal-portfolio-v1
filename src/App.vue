@@ -1,7 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { ref, onMounted, provide } from "vue";
-import LoadingScreen from "@/components/loadingScreen/loadingScreen.component.vue";
+import LoadingScreen from "@/components/loadingScreen/LoadingScreen.component.vue";
+import HeaderNav from "@/components/headerNav/HeaderNav.component.vue";
 
 // SVG Loading Screen
 const loading = ref(true);
@@ -55,14 +56,7 @@ const offLoadingCompleted = () => {
       @onLoadingCompleted="onLoadingCompleted"
       @offLoadingCompleted="offLoadingCompleted"
     />
-    <header>
-      <div class="wrapper">
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-        </nav>
-      </div>
-    </header>
+    <HeaderNav />
     <main>
       <RouterView />
     </main>
