@@ -12,10 +12,16 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faTwitter,
+  faGithub,
+  faLinkedin,
+  faDiscord,
+  faDribbble,
+} from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
-library.add(faTwitter);
+library.add(faTwitter, faLinkedin, faGithub, faDiscord, faDribbble);
 
 // Styles Setup
 import "./assets/styles/reset.styles.scss";

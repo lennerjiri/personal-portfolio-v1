@@ -10,6 +10,7 @@
 <script setup>
 // SVG component
 import svgLoading from "@/assets/img/svgLoading.component.vue";
+import { gsap } from "gsap";
 
 // SVG emits
 const emit = defineEmits(["onLoadingCompleted", "offLoadingCompleted"]);
@@ -17,7 +18,15 @@ const onLoadingCompleted = () => {
   emit("onLoadingCompleted");
 };
 const offLoadingCompleted = () => {
-  emit("offLoadingCompleted");
+  // Animation
+  gsap.to(".root__loading", {
+    autoAlpha: 0,
+    duration: 1,
+    ease: "power4.out",
+    onComplete: () => {
+      emit("offLoadingCompleted");
+    },
+  });
 };
 </script>
 

@@ -3,22 +3,23 @@ import { RouterLink, RouterView } from "vue-router";
 import { ref, onMounted, provide } from "vue";
 import LoadingScreen from "@/components/loadingScreen/LoadingScreen.component.vue";
 import HeaderNav from "@/components/headerNav/HeaderNav.component.vue";
+import { gsap } from "gsap";
 
 // SVG Loading Screen
 const loading = ref(true);
-let openAnimation = false;
+let openAnimation = ref(false);
 const closeAnimation = ref(false);
 
 // Injection values to the SVG
-provide("closeAnimation", closeAnimation);
 provide("openAnimation", openAnimation);
+provide("closeAnimation", closeAnimation);
 
 // Loading system
 const loadingFunction = () => {
   // opening animation runs on its own once the loading screen is mounted
   // set timeout waits until the animation plays and the page content is loaded
   setTimeout(() => {
-    if (document.readyState === "complete" && openAnimation) {
+    if (document.readyState === "complete" && openAnimation.value) {
       closeAnimation.value = true;
     } else {
       // for that we use recursion
@@ -37,14 +38,12 @@ onMounted(() => {
 
 // onLoading animation played emit
 const onLoadingCompleted = () => {
-  openAnimation = true;
+  openAnimation.value = true;
 };
 
 // offLoading animation played emit
 const offLoadingCompleted = () => {
   // close the loading screen
-  console.log("offLoadingCompleted");
-
   loading.value = false;
 };
 </script>
@@ -61,11 +60,17 @@ const offLoadingCompleted = () => {
       <RouterView />
     </main>
     <div class="root__social-networks">
-      <div class="social-networks__line">
-        <font-awesome-icon icon="fa-brands fa-twitter" />
-      </div>
+      <font-awesome-icon icon="fa-brands fa-discord" />
+      <font-awesome-icon icon="fa-brands fa-twitter" />
+      <font-awesome-icon icon="fa-brands fa-dribbble" />
+      <font-awesome-icon icon="fa-brands fa-linkedin" />
+      <font-awesome-icon icon="fa-brands fa-github" />
+      <div class="social-networks__line"></div>
     </div>
-    <div class="root__email"></div>
+    <div class="root__email">
+      <a href="mailto:ji.lenner@outlook.com">ji.lenner@outlook.com</a>
+      <div class="social-networks__line"></div>
+    </div>
     <footer></footer>
   </div>
 </template>
