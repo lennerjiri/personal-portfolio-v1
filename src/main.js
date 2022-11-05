@@ -4,7 +4,10 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 
-//import "./assets/main.css";
+// Styles Setup
+import "./assets/styles/reset.styles.scss";
+import "./assets/styles/variables.styles.scss";
+import "./app.styles.scss";
 
 const app = createApp(App);
 

@@ -1,0 +1,10 @@
+.root {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+.root-scrollOff {
+  height: 100vh;
+  overflow: hidden;
+}
