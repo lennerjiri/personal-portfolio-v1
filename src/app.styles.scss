@@ -24,6 +24,7 @@
   gap: 1.25rem;
 
   > svg {
+    transform: translate(0px, 0px);
     font-size: 1.3rem;
     color: $dark;
     transition: color 0.1s ease-in-out;

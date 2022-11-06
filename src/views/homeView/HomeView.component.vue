@@ -10,7 +10,10 @@
           innovative,world-class web experience. I care deeply about creating
           beautiful, and useful products that help people to make a difference.
         </p>
-        <Button text="Learn more!" />
+        <Button
+          class="center-container__learn-more-button"
+          text="Learn more!"
+        />
       </div>
     </div>
     <div class="page-container__about-me-container"></div>

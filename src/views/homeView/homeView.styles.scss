@@ -50,34 +50,6 @@
         max-width: 37rem;
         font-weight: 300;
       }
-
-      .link-button {
-        font-family: "Barlow", sans-serif;
-        font-weight: 500;
-        font-size: 1.25rem;
-
-        display: flex;
-        justify-content: center;
-        position: relative;
-
-        padding: 0.5rem 1.25rem;
-        border: 0.15rem solid $dark;
-        box-shadow: 0rem 0.2rem 0rem 0rem #272727;
-        border-radius: 0.35rem;
-
-        color: $dark;
-        display: inline-block;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-        &:active {
-          cursor: pointer;
-
-          box-shadow: 0rem 0rem 0rem 0rem #272727;
-        }
-      }
     }
   }
 }

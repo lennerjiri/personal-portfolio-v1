@@ -8,39 +8,39 @@
         </router-link>
       </div>
       <!-- text -->
-      <div class="container__linkContainer">
+      <div class="container__link-container">
         <ul>
-          <li>
+          <li class="link-container__link">
             <router-link to="/">
               <span>01.</span>
               About
             </router-link>
           </li>
-          <li class="li--selected-nav-link">
+          <li class="link-container__link">
             <router-link to="/experience">
               <span>02.</span>
               Experience
             </router-link>
           </li>
-          <li>
+          <li class="link-container__link">
             <router-link to="/projects">
               <span>03.</span>
               Projects
             </router-link>
           </li>
-          <li>
+          <li class="link-container__link">
             <router-link to="/blog">
               <span>04.</span>
               Blog
             </router-link>
           </li>
-          <li>
+          <li class="link-container__link">
             <router-link to="/#contact">
               <span>05.</span>
               Contact
             </router-link>
           </li>
-          <Button text="Resume" />
+          <Button class="link-container__link" text="Resume" />
         </ul>
       </div>
       <!-- hamburger -->
