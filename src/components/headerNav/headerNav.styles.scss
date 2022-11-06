@@ -8,6 +8,7 @@ header {
   position: fixed;
   top: 0;
   background-color: #ffff;
+  z-index: 100;
 
   > .header__container {
     width: calc(100% - 4rem);

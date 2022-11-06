@@ -16,7 +16,46 @@
         />
       </div>
     </div>
-    <div class="page-container__about-me-container"></div>
+    <div class="page-container__about-me-container" id="about">
+      <div class="about-me-container__center-container">
+        <div class="center-container__left-container">
+          <div class="left-container__heading">
+            <h2>
+              <span>01.</span>
+              About me
+            </h2>
+            <div class="heading__divider"></div>
+          </div>
+          <p>
+            lormem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel
+            nisl euismod, luctus nisl eu, luctus nisl eu, luctus nisl eu,
+            luctuslormem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            vel nisl euismod, luctus nisl eu, luctus nisl eu, luctus nisl eu,
+            <br />
+            <br />
+            luctuslormem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            vel nisl euismod, luctus nisl eu, luctus nisl eu, luctus nisl eu,
+            luctuslormem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            vel nisl euismod, luctus nisl eu, luctus nisl eu, luctus nisl eu,
+            <br />
+            <br />
+            luctuslormem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            vel nisl euismod, luctus nisl eu, luctus nisl eu, luctus nisl eu,
+            luctus
+            <router-link to="/technologies"> Technologies I use </router-link>
+          </p>
+        </div>
+        <div class="center-container__right-container">
+          <div class="right-container__image-highlight">
+            <img
+              class="image-highlight__image"
+              src="../../assets/img/IMG_1408 4.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="page-container__experience"></div>
     <div class="page-container__projects"></div>
     <div class="page-container__contact"></div>

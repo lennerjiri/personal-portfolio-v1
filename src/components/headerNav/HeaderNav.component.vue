@@ -40,7 +40,7 @@
               Contact
             </router-link>
           </li>
-          <Button class="link-container__link" text="Resume" />
+          <Button text="Resume" />
         </ul>
       </div>
       <!-- hamburger -->
