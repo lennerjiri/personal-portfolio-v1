@@ -70,18 +70,21 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { onMounted } from "vue";
+import { onMounted, onBeforeUnmount } from "vue";
+
+let TLTREE;
+let TL;
 
 onMounted(() => {
   // ScrollTrigger
+  window.scrollTo(0, 0);
+
   gsap.registerPlugin(ScrollTrigger);
 
   // Tree animation
-
-  const TL = gsap.timeline();
+  TL = gsap.timeline();
 
   // Title
-
   TL.from(".center-container__technologies-heading h2", {
     y: -50,
     autoAlpha: 0,
@@ -95,8 +98,7 @@ onMounted(() => {
   );
 
   // Tree
-
-  const TLTREE = gsap.timeline({
+  TLTREE = gsap.timeline({
     defaults: {
       duration: 2,
       ease: "none",

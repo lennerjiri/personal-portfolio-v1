@@ -70,6 +70,14 @@ onMounted(() => {
         autoAlpha: 0,
         stagger: 0.1,
       })
+      .from(
+        ".link-container__resume-button",
+        {
+          y: -50,
+          autoAlpha: 0,
+        },
+        "-=0.4"
+      )
       .from(".center-container__pre-intro", {
         y: 50,
         autoAlpha: 0,
