@@ -69,7 +69,6 @@
 
 <script setup>
 import { onMounted, inject, watch } from "vue";
-import { gsap } from "gsap";
 
 // svg event instance
 let svgEvent;

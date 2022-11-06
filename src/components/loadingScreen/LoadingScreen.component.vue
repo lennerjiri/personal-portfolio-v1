@@ -23,9 +23,7 @@ const offLoadingCompleted = () => {
     autoAlpha: 0,
     duration: 1,
     ease: "power4.out",
-    onComplete: () => {
-      emit("offLoadingCompleted");
-    },
+    onComplete: emit("offLoadingCompleted"),
   });
 };
 </script>

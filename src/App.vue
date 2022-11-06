@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { ref, onMounted, provide } from "vue";
+import { ref, onMounted, onBeforeMount, provide } from "vue";
 import LoadingScreen from "@/components/loadingScreen/LoadingScreen.component.vue";
 import HeaderNav from "@/components/headerNav/HeaderNav.component.vue";
 import { gsap } from "gsap";
@@ -13,6 +13,9 @@ const closeAnimation = ref(false);
 // Injection values to the SVG
 provide("openAnimation", openAnimation);
 provide("closeAnimation", closeAnimation);
+
+// GSAP Timeline
+let TL;
 
 // Loading system
 const loadingFunction = () => {
@@ -30,7 +33,17 @@ const loadingFunction = () => {
 };
 
 // Trigger loading system when app is mounted
+
 onMounted(() => {
+  TL = gsap.timeline({
+    paused: true,
+  });
+
+  TL.from(".container__logo", {
+    autoAlpha: 0,
+    duration: 2,
+  });
+
   document.onreadystatechange = () => {
     loadingFunction();
   };
@@ -44,10 +57,10 @@ const onLoadingCompleted = () => {
 // offLoading animation played emit
 const offLoadingCompleted = () => {
   // close the loading screen
+  TL.play();
   loading.value = false;
 };
 
-// Animation
 // Scroll and top menu snap
 </script>
 
@@ -60,13 +73,9 @@ const offLoadingCompleted = () => {
     />
     <HeaderNav />
     <main>
-      <div style="height: 500px"></div>
-      <div style="height: 500px"></div>
-      <div style="height: 500px"></div>
-      <div style="height: 500px"></div>
-      <div style="height: 500px"></div>
-      <div style="height: 500px"></div>
+      <!-- <div style="height: 500px"></div> -->
       <RouterView />
+      <!-- <div style="height: 500px"></div> -->
     </main>
     <div class="root__social-networks">
       <font-awesome-icon icon="fa-brands fa-discord" />

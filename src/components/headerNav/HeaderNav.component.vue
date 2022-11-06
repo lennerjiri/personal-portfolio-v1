@@ -40,7 +40,7 @@
               Contact
             </router-link>
           </li>
-          <div class="linkContainer__ul__resumeButton">Resume</div>
+          <Button text="Resume" />
         </ul>
       </div>
       <!-- hamburger -->
@@ -53,6 +53,8 @@
 
 <script setup>
 import HamburgerMenu from "@/assets/img/svgHamburgerMenu.component.vue";
+import Button from "@/components/button/LinkButton.component.vue";
+
 import { gsap } from "gsap";
 
 let previousScroll = null;
@@ -60,15 +62,21 @@ let previousScroll = null;
 window.addEventListener("scroll", () => {
   const scrollPosition = window.scrollY;
 
-  if (scrollPosition === 0) {
+  if (scrollPosition <= 100) {
     gsap.to("header", {
       y: 0,
+      boxShadow:
+        "rgba(255, 255, 255, 0) 0px 0px 0px 0px,rgba(255, 255, 255, 0) 0px 0px 0px 0px",
+      height: "6rem",
       duration: 0.5,
       ease: "power4.out",
     });
   } else if (scrollPosition < previousScroll) {
     gsap.to("header", {
       y: 0,
+      height: "5rem",
+      boxShadow:
+        "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
       duration: 0.5,
       ease: "power4.out",
     });
@@ -76,6 +84,9 @@ window.addEventListener("scroll", () => {
   } else {
     gsap.to("header", {
       y: -80,
+      height: "5rem",
+      boxShadow:
+        "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
       duration: 0.5,
       ease: "power4.out",
     });
