@@ -11,7 +11,7 @@
 
   .page-container__intro-container {
     width: 100%;
-    height: calc(100vh);
+    min-height: calc(100vh);
 
     display: flex;
     justify-content: center;
