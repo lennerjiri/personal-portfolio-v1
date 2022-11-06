@@ -1,9 +1,14 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import { ref, onMounted, onBeforeMount, provide } from "vue";
+import { RouterLink, RouterView, useRouter, useRoute } from "vue-router";
+import { ref, onMounted, onBeforeMount, provide, watch } from "vue";
 import LoadingScreen from "@/components/loadingScreen/LoadingScreen.component.vue";
 import HeaderNav from "@/components/headerNav/HeaderNav.component.vue";
 import { gsap } from "gsap";
+
+// Router
+const router = useRouter();
+const route = useRoute();
+let currentRoute = "";
 
 // SVG Loading Screen
 const loading = ref(true);
@@ -32,21 +37,38 @@ const loadingFunction = () => {
   }, 1000);
 };
 
+watch(
+  () => loading.value,
+  (val) => {
+    if (val) {
+      loadingFunction();
+    }
+  }
+);
+
 // Trigger loading system when app is mounted
 
 onMounted(() => {
-  TL = gsap.timeline({
-    paused: true,
-  });
+  console.log(route.path);
 
-  TL.from(".container__logo", {
-    autoAlpha: 0,
-    duration: 2,
-  });
+  if (route.path === "/") {
+    // loading screen is only shown on the home page
 
-  document.onreadystatechange = () => {
-    loadingFunction();
-  };
+    TL = gsap.timeline({
+      paused: true,
+    });
+
+    TL.from(".container__logo", {
+      autoAlpha: 0,
+      duration: 2,
+    });
+
+    document.onreadystatechange = () => {
+      loadingFunction();
+    };
+  } else {
+    loading.value = false;
+  }
 });
 
 // onLoading animation played emit
