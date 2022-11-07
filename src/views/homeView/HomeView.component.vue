@@ -313,15 +313,26 @@ const selectJob = (jobIndex) => {
 // Projects
 const selectedSwitch = ref(0);
 const selectSwitch = (switchIndex) => {
-  selectedSwitch.value = switchIndex;
-
   const TL = gsap.timeline();
 
-  TL.to(".switch__divider", {
+  TL.to(".center-container__projects-container", {
     ease: "power1.inOut",
+    autoAlpha: 0,
     duration: 0.1,
-    x: switchIndex * 224,
-  });
+  })
+    .to(".switch__divider", {
+      ease: "power1.inOut",
+      duration: 0.1,
+      x: switchIndex * 224,
+    })
+    .add(() => {
+      selectedSwitch.value = switchIndex;
+    })
+    .to(".center-container__projects-container", {
+      ease: "power1.inOut",
+      autoAlpha: 1,
+      duration: 0.1,
+    });
 };
 const projectsData = ref([
   {
