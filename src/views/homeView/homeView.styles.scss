@@ -92,7 +92,6 @@
       justify-content: space-between;
       gap: 3rem;
       .center-container__left-container {
-        flex-grow: 1;
         .left-container__heading {
           display: flex;
           align-items: center;
@@ -102,6 +101,7 @@
             font-family: $font-text;
             color: $dark;
             font-size: 2rem;
+            min-width: 14rem;
 
             > span {
               font-family: $font-mono;
@@ -200,6 +200,7 @@
       .center-container__experience-container {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
 
         width: 100%;
         gap: 2rem;
@@ -207,7 +208,6 @@
         .experience-container__slider-container {
           position: relative;
           min-width: 15rem;
-
           .slider-container__divider {
             position: absolute;
             top: 0;
@@ -218,17 +218,18 @@
             z-index: 1;
           }
 
+          .slider-container__divider-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: $light-dark;
+          }
+
           .slider-container__select {
             position: relative;
 
-            div {
-              position: absolute;
-              left: 0;
-              bottom: 0;
-              top: 0;
-              width: 2px;
-              background-color: $light-dark;
-            }
             p {
               padding: 1rem 0;
               margin-left: 1.5rem;

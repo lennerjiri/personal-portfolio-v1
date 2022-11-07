@@ -68,6 +68,7 @@
         <div class="center-container__experience-container">
           <div class="experience-container__slider-container">
             <div class="slider-container__divider"></div>
+            <div class="slider-container__divider-line"></div>
             <div
               class="slider-container__select"
               v-for="job of jobs"
@@ -75,10 +76,9 @@
               v-on:click="selectJob(jobs.indexOf(job))"
               :class="{
                 'slider-container__select--selected':
-                  selectedJob === jobs.indexOf(job),
+                  selectedJob === jobs.indexOf(job) && !loading,
               }"
             >
-              <div></div>
               <p>{{ job.name }}</p>
             </div>
           </div>
@@ -241,9 +241,82 @@
 
 <script setup>
 import Button from "@/components/button/LinkButton.component.vue";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
+const loading = ref(true);
+
+onMounted(() => {
+  const TLABOUT = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".about-me-container__center-container",
+        start: "top 75%",
+        end: "top 25%",
+        //markers: true,
+      },
+      defaults: { ease: "power1.inOut", duration: 0.5 },
+    })
+    .from(".left-container__heading h2", {
+      y: 100,
+      autoAlpha: 0,
+    })
+    .from(".left-container__heading .heading__divider", {
+      flexGrow: 0,
+      autoAlpha: 0,
+    })
+    .from(".right-container__image-highlight", {
+      autoAlpha: 0,
+      y: 100,
+    })
+    .from(".center-container__left-container p", {
+      autoAlpha: 0,
+      y: 100,
+    });
+
+  const TLEXP = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".experience__center-container",
+        start: "top 75%",
+        end: "top 25%",
+        //markers: true,
+      },
+      defaults: { ease: "power1.inOut", duration: 0.5 },
+    })
+    .from(".center-container__heading h2", {
+      autoAlpha: 0,
+      y: -10,
+    })
+    .from(".center-container__heading .heading__divider", {
+      autoAlpha: 0,
+      flexGrow: 0,
+    })
+    .from(".slider-container__divider-line", {
+      autoAlpha: 0,
+      height: 0,
+    })
+    .from(".slider-container__select", {
+      autoAlpha: 0,
+      y: -10,
+      stagger: 0.25,
+    })
+    .from(".slider-container__divider", {
+      autoAlpha: 0,
+    })
+    .add(() => {
+      loading.value = false;
+    })
+    .from(".experience-container__content", {
+      autoAlpha: 0,
+      y: -10,
+    });
+});
+
+// About me animation
 const selectedJob = ref(0);
 const jobs = [
   {
