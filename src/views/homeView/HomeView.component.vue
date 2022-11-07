@@ -133,7 +133,106 @@
             <div></div>
           </div>
         </div>
-        <div class="center-container__projects-container"></div>
+        <div class="center-container__projects-container">
+          <div
+            class="projects-container__most-recent-container"
+            v-if="selectedSwitch === 0"
+          >
+            <div
+              class="most-recent-container__project"
+              v-for="project of projectsData"
+              :key="project._id"
+            >
+              <div
+                class="project__image-container"
+                :style="{
+                  order: projectsData.indexOf(project) % 2 === 0 ? 0 : 1,
+                }"
+              >
+                <img
+                  :src="`/src/assets/img/projects/${project.frontImage}`"
+                  alt=""
+                />
+              </div>
+              <div class="project__text-container">
+                <div class="text-container__heading">
+                  <h3>{{ project.name }}</h3>
+                  <div>
+                    <!-- Links -->
+                    <a v-if="project.links.github" :href="project.links.github">
+                      <font-awesome-icon icon="fa-brands fa-github" />
+                    </a>
+
+                    <a
+                      v-if="project.links.hosting"
+                      :href="project.links.hosting"
+                    >
+                      <font-awesome-icon
+                        icon="fa-solid fa-up-right-from-square"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <p
+                  class="text-container__description"
+                  v-for="shortDescription of project.shortDescriptionRecent"
+                  :key="
+                    project.shortDescriptionRecent.indexOf(shortDescription)
+                  "
+                >
+                  {{ shortDescription }}
+                </p>
+                <div class="text-container__footer">
+                  <div class="footer__technologies">
+                    <!-- technologies -->
+                    <a
+                      v-for="technology of project.technologies"
+                      :key="project.technologies.indexOf(technology)"
+                      :href="technology.link"
+                      >{{ technology.name }}</a
+                    >
+                  </div>
+                  <!-- button -->
+                  <Button class="footer__button" text="Case study" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="projects-container__project-archive-container"
+            v-if="selectedSwitch === 1"
+          >
+            <div
+              class="project-archive-container__archive-project"
+              v-for="project of projectsData"
+              :key="project._id"
+            >
+              <div class="archive-project__links-container">
+                <font-awesome-icon icon="fa-regular fa-folder" />
+                <div>
+                  <a v-if="project.links.github" :href="project.links.github">
+                    <font-awesome-icon icon="fa-brands fa-github" />
+                  </a>
+
+                  <a v-if="project.links.hosting" :href="project.links.hosting">
+                    <font-awesome-icon
+                      icon="fa-solid fa-up-right-from-square"
+                    />
+                  </a>
+                </div>
+              </div>
+              <h3 class="archive-project__heading">{{ project.name }}</h3>
+              <p class="archive-project__description">
+                {{ project.shortDescriptionArchive }}
+              </p>
+              <div class="archive-project__technologies">
+                <p>Vue.js</p>
+                <p>nuxtjs</p>
+                <p>TypeScript</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="page-container__contact"></div>
@@ -224,6 +323,95 @@ const selectSwitch = (switchIndex) => {
     x: switchIndex * 224,
   });
 };
+const projectsData = ref([
+  {
+    _id: 0,
+    name: "Knedkliky",
+    links: {
+      github: "https://github.com/lennerjiri/projekt_vejce_frontend",
+      hosting: "https://kraslicelennerova.cz/",
+    },
+    frontImage: "kraslice1.webp",
+    shortDescriptionRecent: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod,",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod, ",
+    ],
+    shortDescriptionArchive:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel asdf nisl euismo sssdd as fas dfasdfasdfs ed vel nisl euismo, ",
+    technologies: [
+      {
+        name: "Vue.js",
+        link: "https://vuejs.org/",
+      },
+      {
+        name: "Nuxt.js",
+        link: "https://nuxtjs.org/",
+      },
+      {
+        name: "Node.js",
+        link: "https://nodejs.org/en/",
+      },
+    ],
+  },
+  {
+    _id: 1,
+    name: "Kraslice Ecommerce",
+    links: {
+      github: "https://github.com/lennerjiri/projekt_vejce_frontend",
+      hosting: "https://kraslicelennerova.cz/",
+    },
+    frontImage: "kraslice1.webp",
+    shortDescriptionRecent: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod,",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod, ",
+    ],
+    shortDescriptionArchive:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel asdf nisl euismo sssdd as fas dfasdfasdfs ed vel nisl euismo,  ",
+    technologies: [
+      {
+        name: "Vue.js",
+        link: "https://vuejs.org/",
+      },
+      {
+        name: "Nuxt.js",
+        link: "https://nuxtjs.org/",
+      },
+      {
+        name: "Node.js",
+        link: "https://nodejs.org/en/",
+      },
+    ],
+  },
+  {
+    _id: 2,
+    name: "Pantofle Ecommerce",
+    links: {
+      github: "https://github.com/lennerjiri/projekt_vejce_frontend",
+      hosting: "https://kraslicelennerova.cz/",
+    },
+    frontImage: "kraslice1.webp",
+    shortDescriptionRecent: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod,",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod, ",
+    ],
+    shortDescriptionArchive:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel asdf nisl euismo sssdd as fas dfasdfasdfs ed vel nisl euismo, ",
+    technologies: [
+      {
+        name: "Vue.js",
+        link: "https://vuejs.org/",
+      },
+      {
+        name: "Nuxt.js",
+        link: "https://nuxtjs.org/",
+      },
+      {
+        name: "Node.js",
+        link: "https://nodejs.org/en/",
+      },
+    ],
+  },
+]);
 </script>
 
 <style lang="scss" scoped>

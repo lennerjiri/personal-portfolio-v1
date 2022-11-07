@@ -20,7 +20,12 @@ import {
   faDribbble,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faCaretRight } from "@fortawesome/pro-solid-svg-icons";
+import {
+  faCaretRight,
+  faUpRightFromSquare,
+} from "@fortawesome/pro-solid-svg-icons";
+
+import { faFolder } from "@fortawesome/pro-regular-svg-icons";
 
 /* add icons to the library */
 library.add(
@@ -29,7 +34,9 @@ library.add(
   faGithub,
   faDiscord,
   faDribbble,
-  faCaretRight
+  faCaretRight,
+  faUpRightFromSquare,
+  faFolder
 );
 
 // Styles Setup
