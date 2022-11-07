@@ -52,7 +52,7 @@
 
   .page-container__about-me-container {
     width: 100%;
-    padding: 6rem 0;
+    padding-top: 6rem;
 
     display: flex;
     justify-content: center;
@@ -81,7 +81,7 @@
             }
           }
           .heading__divider {
-            height: 0.25rem;
+            height: 0.2rem;
             background-color: $light-dark;
             margin: 0 1rem;
             flex-grow: 1;
@@ -125,6 +125,226 @@
               top: 1rem;
               left: 1rem;
             }
+          }
+        }
+      }
+    }
+  }
+
+  .page-container__experience {
+    width: 100%;
+    padding-top: 12rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .experience__center-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .center-container__heading {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        > h2 {
+          font-family: $font-text;
+          color: $dark;
+          font-size: 2rem;
+
+          > span {
+            font-family: $font-mono;
+            color: $light-dark;
+          }
+        }
+
+        .heading__divider {
+          height: 0.2rem;
+          background-color: $light-dark;
+          margin-left: 1rem;
+          flex-grow: 1;
+        }
+      }
+
+      .center-container__experience-container {
+        display: flex;
+        justify-content: space-between;
+
+        width: 100%;
+        gap: 2rem;
+
+        .experience-container__slider-container {
+          position: relative;
+          min-width: 15rem;
+
+          .slider-container__divider {
+            position: absolute;
+            top: 0;
+            left: -1px;
+            height: 3.25rem;
+            width: 4px;
+            background-color: $dark;
+            z-index: 1;
+          }
+
+          .slider-container__select {
+            position: relative;
+
+            div {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              top: 0;
+              width: 2px;
+              background-color: $light-dark;
+            }
+            p {
+              padding: 1rem 0;
+              margin-left: 1.5rem;
+              font-family: $font-mono;
+              font-size: 1.25em;
+
+              font-weight: 400;
+              color: $light-dark;
+              transition: color 0.1s ease-in-out;
+            }
+
+            &:hover {
+              cursor: pointer;
+              p {
+                color: $dark;
+              }
+            }
+          }
+
+          .slider-container__select--selected {
+            p {
+              color: $dark;
+            }
+          }
+        }
+
+        .experience-container__content {
+          .content__job-position {
+            font-family: $font-text;
+            color: $dark;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+          }
+
+          .content__job-date {
+            font-family: $font-mono;
+            color: $light-dark;
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+          }
+          .content__job-description {
+            margin-bottom: 1rem;
+            display: flex;
+            svg {
+              margin-right: 1rem;
+              color: $dark;
+              font-size: 1.75rem;
+            }
+            p {
+              @include large-text;
+              max-width: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .page-container__projects {
+    width: 100%;
+    padding-top: 12rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .projects__center-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .center-container__heading {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4rem;
+
+        > h2 {
+          font-family: $font-text;
+          color: $dark;
+          font-size: 2rem;
+
+          > span {
+            font-family: $font-mono;
+            color: $light-dark;
+          }
+        }
+      }
+
+      .center-container__switch {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        margin-bottom: 2rem;
+
+        .switch__divider {
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          height: 4px;
+          width: 14rem;
+          background-color: $dark;
+          z-index: 1;
+        }
+
+        .switch__button {
+          position: relative;
+          width: 14rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          p {
+            box-sizing: border-box;
+            padding-bottom: 1rem;
+            font-family: $font-mono;
+            font-size: 1.25em;
+            font-weight: 400;
+            color: $light-dark;
+            transition: color 0.1s ease-in-out;
+          }
+
+          div {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 2px;
+            background-color: $light-dark;
+          }
+
+          &:hover {
+            cursor: pointer;
+            p {
+              color: $dark;
+            }
+          }
+        }
+
+        .switch__button--selected {
+          p {
+            color: $dark;
           }
         }
       }

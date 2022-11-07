@@ -11,7 +11,7 @@
       <div class="container__link-container">
         <ul>
           <li class="link-container__link">
-            <router-link to="/">
+            <router-link to="/#about">
               <span>01.</span>
               About
             </router-link>
@@ -28,15 +28,15 @@
               Projects
             </router-link>
           </li>
-          <li class="link-container__link">
+          <!-- <li class="link-container__link">
             <router-link to="/blog">
               <span>04.</span>
               Blog
             </router-link>
-          </li>
+          </li> -->
           <li class="link-container__link">
             <router-link to="/#contact">
-              <span>05.</span>
+              <span>04.</span>
               Contact
             </router-link>
           </li>

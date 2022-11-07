@@ -20,8 +20,17 @@ import {
   faDribbble,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { faCaretRight } from "@fortawesome/pro-solid-svg-icons";
+
 /* add icons to the library */
-library.add(faTwitter, faLinkedin, faGithub, faDiscord, faDribbble);
+library.add(
+  faTwitter,
+  faLinkedin,
+  faGithub,
+  faDiscord,
+  faDribbble,
+  faCaretRight
+);
 
 // Styles Setup
 import "./assets/styles/reset.styles.scss";

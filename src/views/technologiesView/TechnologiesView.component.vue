@@ -72,16 +72,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { onMounted, onBeforeUnmount } from "vue";
 
+gsap.registerPlugin(ScrollTrigger);
+
 let TLTREE;
+
 let TL;
 
-onMounted(() => {
-  // ScrollTrigger
-  window.scrollTo(0, 0);
+// ScrollTrigger
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Tree animation
+const startTimeline = () => {
+  TLTREE = gsap.timeline({
+    defaults: {
+      duration: 2,
+      ease: "none",
+    },
+    scrollTrigger: {
+      trigger: ".main__page-container",
+      start: "top top",
+      end: "bottom bottom",
+      //markers: true,
+      scrub: true,
+    },
+  });
   TL = gsap.timeline();
 
   // Title
@@ -98,20 +110,6 @@ onMounted(() => {
   );
 
   // Tree
-  TLTREE = gsap.timeline({
-    defaults: {
-      duration: 2,
-      ease: "none",
-    },
-    scrollTrigger: {
-      trigger: ".main__page-container",
-      start: "top top",
-      end: "bottom bottom",
-      //markers: true,
-      scrub: true,
-    },
-  });
-
   TLTREE.from(".tree-container__tree-root", {
     height: 0,
   })
@@ -234,7 +232,20 @@ onMounted(() => {
       y: 50,
       scale: 0,
     });
+
+  setTimeout(function () {
+    TLTREE.scrollTrigger.refresh();
+  }, 10);
+};
+
+onMounted(() => {
+  startTimeline();
 });
+
+// onBeforeUnmount(() => {
+//   TLTREE.scrollTrigger.kill();
+//   TL.kill();
+// });
 </script>
 
 <style lang="scss" scoped>
