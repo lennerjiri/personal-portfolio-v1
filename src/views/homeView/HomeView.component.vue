@@ -76,7 +76,7 @@
               v-on:click="selectJob(jobs.indexOf(job))"
               :class="{
                 'slider-container__select--selected':
-                  selectedJob === jobs.indexOf(job) && !loading,
+                  selectedJob === jobs.indexOf(job) && !loadingJob,
               }"
             >
               <p>{{ job.name }}</p>
@@ -112,15 +112,16 @@
         </div>
         <div class="center-container__switch">
           <div class="switch__divider"></div>
+          <div class="switch__divider-line"></div>
           <div
             class="switch__button"
             :class="{
-              'switch__button--selected': selectedSwitch === 0,
+              'switch__button--selected':
+                selectedSwitch === 0 && !loadingProject,
             }"
             @click="selectSwitch(0)"
           >
             <p>Most recent</p>
-            <div></div>
           </div>
           <div
             class="switch__button"
@@ -130,7 +131,6 @@
             @click="selectSwitch(1)"
           >
             <p>Archive</p>
-            <div></div>
           </div>
         </div>
         <div class="center-container__projects-container">
@@ -247,7 +247,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const loading = ref(true);
+const loadingJob = ref(true);
+const loadingProject = ref(true);
 
 onMounted(() => {
   const TLABOUT = gsap
@@ -308,11 +309,40 @@ onMounted(() => {
       autoAlpha: 0,
     })
     .add(() => {
-      loading.value = false;
+      loadingJob.value = false;
     })
     .from(".experience-container__content", {
       autoAlpha: 0,
       y: -10,
+    });
+
+  const TLPROJECTS = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".projects__center-container",
+        start: "top 75%",
+        end: "top 25%",
+        markers: true,
+      },
+      defaults: { ease: "power1.inOut", duration: 0.5 },
+    })
+    .from(".projects__center-container .center-container__heading", {
+      autoAlpha: 0,
+      y: -10,
+    })
+    .from(".switch__divider-line", {
+      width: 0,
+    })
+    .from(".switch__button", {
+      autoAlpha: 0,
+      y: 10,
+      stagger: 0.25,
+    })
+    .from(".switch__divider", {
+      autoAlpha: 0,
+    })
+    .add(() => {
+      loadingProject.value = false;
     });
 });
 
