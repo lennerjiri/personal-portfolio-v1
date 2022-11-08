@@ -322,7 +322,6 @@ onMounted(() => {
         trigger: ".projects__center-container",
         start: "top 75%",
         end: "top 25%",
-        markers: true,
       },
       defaults: { ease: "power1.inOut", duration: 0.5 },
     })
@@ -344,6 +343,23 @@ onMounted(() => {
     .add(() => {
       loadingProject.value = false;
     });
+
+  const recentProjects = gsap.utils.toArray(
+    ".most-recent-container__project .project__image-container"
+  );
+
+  recentProjects.forEach((recentProject) => {
+    gsap.from(recentProject, {
+      autoAlpha: 0,
+      x: -10,
+      defaults: { ease: "power1.inOut", duration: 0.5 },
+      scrollTrigger: {
+        trigger: recentProject,
+        start: "top 75%",
+        end: "top 25%",
+      },
+    });
+  });
 });
 
 // About me animation

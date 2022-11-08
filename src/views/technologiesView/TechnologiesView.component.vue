@@ -232,20 +232,20 @@ const startTimeline = () => {
       y: 50,
       scale: 0,
     });
-
-  setTimeout(function () {
-    TLTREE.scrollTrigger.refresh();
-  }, 10);
 };
 
 onMounted(() => {
   startTimeline();
+  setTimeout(function () {
+    TLTREE.scrollTrigger.refresh();
+  }, 10);
 });
 
-// onBeforeUnmount(() => {
-//   TLTREE.scrollTrigger.kill();
-//   TL.kill();
-// });
+onBeforeUnmount(() => {
+  // TLTREE.scrollTrigger.kill();
+  // TL.kill();
+  TLTREE.scrollTrigger.refresh();
+});
 </script>
 
 <style lang="scss" scoped>
