@@ -3,9 +3,9 @@
     <div class="header__container">
       <!-- logo -->
       <div class="container__logo">
-        <router-link to="/#intro">
+        <a href="/">
           <img src="@/assets/img/staticLogo.svg" alt="logo" />
-        </router-link>
+        </a>
       </div>
       <!-- text -->
       <div class="container__link-container">
@@ -40,7 +40,11 @@
               Contact
             </a>
           </li>
-          <Button class="link-container__resume-button" text="Resume" />
+          <Button
+            @click="openPdf"
+            class="link-container__resume-button"
+            text="Resume"
+          />
         </ul>
       </div>
       <!-- hamburger -->
@@ -58,6 +62,10 @@ import Button from "@/components/button/LinkButton.component.vue";
 import { gsap } from "gsap";
 
 let previousScroll = null;
+
+const openPdf = () => {
+  window.open("/src/assets/other/resume-lenner-jiri.pdf", "fullscreen=yes");
+};
 
 window.addEventListener("scroll", () => {
   const scrollPosition = window.scrollY;

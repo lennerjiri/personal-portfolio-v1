@@ -176,26 +176,39 @@ const offLoadingCompleted = () => {
       </RouterView>
     </main>
     <div class="root__social-networks">
-      <font-awesome-icon
-        icon="fa-brands fa-discord"
-        class="social-networks__icon"
-      />
-      <font-awesome-icon
-        icon="fa-brands fa-twitter"
-        class="social-networks__icon"
-      />
-      <font-awesome-icon
-        icon="fa-brands fa-dribbble"
-        class="social-networks__icon"
-      />
-      <font-awesome-icon
-        icon="fa-brands fa-linkedin"
-        class="social-networks__icon"
-      />
-      <font-awesome-icon
-        icon="fa-brands fa-github"
-        class="social-networks__icon"
-      />
+      <a target="_blank" href="https://discordapp.com/users/NutShell#2761">
+        <font-awesome-icon
+          icon="fa-brands fa-discord"
+          class="social-networks__icon"
+        />
+      </a>
+      <a target="_blank" href="https://twitter.com/LennerJiri">
+        <font-awesome-icon
+          icon="fa-brands fa-twitter"
+          class="social-networks__icon"
+        />
+      </a>
+      <a target="_blank" v-if="false" href="">
+        <font-awesome-icon
+          icon="fa-brands fa-dribbble"
+          class="social-networks__icon"
+        />
+      </a>
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/ji%C5%99%C3%AD-lenner-78a52520a/"
+      >
+        <font-awesome-icon
+          icon="fa-brands fa-linkedin"
+          class="social-networks__icon"
+        />
+      </a>
+      <a target="_blank" href="https://github.com/lennerjiri">
+        <font-awesome-icon
+          icon="fa-brands fa-github"
+          class="social-networks__icon"
+        />
+      </a>
       <div class="social-networks__line"></div>
     </div>
     <div class="root__email">
