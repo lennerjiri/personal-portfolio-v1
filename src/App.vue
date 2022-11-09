@@ -157,9 +157,11 @@ const offLoadingCompleted = () => {
     />
     <HeaderNav />
     <main>
-      <!-- <div style="height: 500px"></div> -->
-      <RouterView />
-      <!-- <div style="height: 500px"></div> -->
+      <RouterView v-slot="{ Component }">
+        <Transition name="router" mode="out-in">
+          <component :is="Component" />
+        </Transition>
+      </RouterView>
     </main>
     <div class="root__social-networks">
       <font-awesome-icon
@@ -193,3 +195,16 @@ const offLoadingCompleted = () => {
     <footer></footer>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.router-enter-from {
+  opacity: 0;
+}
+.router-enter-active,
+.router-leave-active {
+  transition: 100ms ease-in-out;
+}
+.router-leave-to {
+  opacity: 0;
+}
+</style>

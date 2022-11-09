@@ -50,7 +50,7 @@ onMounted(() => {
         trigger: ".page-container__contact",
         start: "top 75%",
         end: "top 25%",
-        markers: true,
+        //markers: true,
       },
       defaults: { ease: "power1.inOut", duration: 0.5 },
     })

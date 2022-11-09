@@ -67,18 +67,14 @@
 </template>
 
 <script setup>
+import { onBeforeMount, onMounted, onBeforeUnmount } from "vue";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import { onMounted, onBeforeUnmount } from "vue";
-
 gsap.registerPlugin(ScrollTrigger);
 
 let TLTREE;
-
 let TL;
-
-// ScrollTrigger
 
 const startTimeline = () => {
   TLTREE = gsap.timeline({
@@ -234,6 +230,10 @@ const startTimeline = () => {
     });
 };
 
+onBeforeMount(() => {
+  window.scrollTo(0, 0);
+});
+
 onMounted(() => {
   startTimeline();
   setTimeout(function () {
@@ -242,8 +242,6 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  // TLTREE.scrollTrigger.kill();
-  // TL.kill();
   TLTREE.scrollTrigger.refresh();
 });
 </script>
