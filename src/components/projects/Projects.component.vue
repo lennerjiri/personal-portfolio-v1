@@ -13,7 +13,7 @@
         <div
           class="switch__button"
           :class="{
-            'switch__button--selected': selectedSwitch === 0 && !loadingProject,
+            'switch__button--selected': selectedSwitch === 0 && !firstLoad,
           }"
           @click="selectSwitch(0)"
         >

@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView, useRoute } from "vue-router";
-import { ref, onMounted, provide, watch } from "vue";
+import { ref, onMounted, provide, watch, nextTick } from "vue";
 import LoadingScreen from "@/components/loadingScreen/LoadingScreen.component.vue";
 import HeaderNav from "@/components/headerNav/HeaderNav.component.vue";
 import { gsap } from "gsap";
@@ -44,7 +44,6 @@ watch(
 );
 
 // Trigger loading system when app is mounted only at specific route
-
 onMounted(() => {
   if (route.path === "/") {
     // loading screen is only shown on the home page
@@ -143,6 +142,19 @@ const offLoadingCompleted = () => {
   // close the loading screen
   TL.play();
   loading.value = false;
+
+  nextTick(() => {
+    if (route.hash) {
+      const el = document.getElementById(route.hash.slice(1));
+
+      if (el) {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  });
 };
 
 // Scroll and top menu snap

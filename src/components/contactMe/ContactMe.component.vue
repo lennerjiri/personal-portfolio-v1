@@ -52,7 +52,7 @@ onMounted(() => {
         end: "top 25%",
         //markers: true,
       },
-      defaults: { ease: "power1.inOut", duration: 0.5 },
+      defaults: { ease: "power1.inOut", duration: 0.25 },
     })
     .from(".center-container__form-heading h2", {
       autoAlpha: 0,
@@ -65,16 +65,12 @@ onMounted(() => {
     .from(".formContainer__form input", {
       autoAlpha: 0,
       y: -10,
-      stagger: 0.1,
+      stagger: 0.25,
     })
-    .from(
-      ".formContainer__form textarea",
-      {
-        autoAlpha: 0,
-        y: -10,
-      },
-      "-=0.5"
-    )
+    .from(".formContainer__form textarea", {
+      autoAlpha: 0,
+      y: -10,
+    })
     .from(".form__submit-container div", {
       autoAlpha: 0,
       x: -10,

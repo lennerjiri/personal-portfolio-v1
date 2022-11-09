@@ -1,5 +1,5 @@
 <template>
-  <div class="main__page-container">
+  <div class="main__page-container" ref="topTechContainer">
     <div class="page-container__center-container">
       <!-- Heading -->
       <div class="center-container__technologies-heading">
@@ -67,7 +67,7 @@
 </template>
 
 <script setup>
-import { onBeforeMount, onMounted, onBeforeUnmount } from "vue";
+import { onMounted, onBeforeUnmount } from "vue";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -230,18 +230,21 @@ const startTimeline = () => {
     });
 };
 
-onBeforeMount(() => {
-  window.scrollTo(0, 0);
-});
-
 onMounted(() => {
   startTimeline();
+  window.scrollTo({
+    top: 0,
+    behavior: "instant",
+  });
+
   setTimeout(function () {
     TLTREE.scrollTrigger.refresh();
   }, 10);
 });
 
 onBeforeUnmount(() => {
+  // TLTREE.scrollTrigger.kill();
+  // TL.kill();
   TLTREE.scrollTrigger.refresh();
 });
 </script>

@@ -1,5 +1,9 @@
 @import "./assets/styles/variables.styles.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::selection {
   background: #dedede; /* WebKit/Blink Browsers */
 }

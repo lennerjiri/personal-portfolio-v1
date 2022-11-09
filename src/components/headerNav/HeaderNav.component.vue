@@ -11,22 +11,22 @@
       <div class="container__link-container">
         <ul>
           <li class="link-container__link">
-            <router-link to="/#about">
+            <a href="/#about">
               <span>01.</span>
               About
-            </router-link>
+            </a>
           </li>
           <li class="link-container__link">
-            <router-link to="/#experience">
+            <a href="/#experience">
               <span>02.</span>
               Experience
-            </router-link>
+            </a>
           </li>
           <li class="link-container__link">
-            <router-link to="/#projects">
+            <a href="/#projects">
               <span>03.</span>
               Projects
-            </router-link>
+            </a>
           </li>
           <!-- <li class="link-container__link">
             <router-link to="/blog">
@@ -35,10 +35,10 @@
             </router-link>
           </li> -->
           <li class="link-container__link">
-            <router-link to="/#contact">
+            <a href="/#contact">
               <span>04.</span>
               Contact
-            </router-link>
+            </a>
           </li>
           <Button class="link-container__resume-button" text="Resume" />
         </ul>
