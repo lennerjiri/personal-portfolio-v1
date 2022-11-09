@@ -1,0 +1,98 @@
+@import "../../assets/styles/variables.styles.scss";
+
+.page-container__projects {
+  width: 100%;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .projects__center-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .center-container__projects-heading {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4rem;
+
+      > h2 {
+        font-family: $font-text;
+        color: $dark;
+        font-size: 2rem;
+
+        > span {
+          font-family: $font-mono;
+          color: $light-dark;
+        }
+      }
+    }
+
+    .center-container__switch {
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      margin-bottom: 6rem;
+
+      .switch__divider {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 4px;
+        width: 14rem;
+        background-color: $dark;
+        z-index: 1;
+      }
+      .switch__divider-line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $light-dark;
+      }
+
+      .switch__button {
+        position: relative;
+        width: 14rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          box-sizing: border-box;
+          padding-bottom: 1rem;
+          font-family: $font-mono;
+          font-size: 1.25em;
+          font-weight: 400;
+          color: $light-dark;
+          transition: color 0.1s ease-in-out;
+        }
+
+        &:hover {
+          cursor: pointer;
+          p {
+            color: $dark;
+          }
+        }
+      }
+
+      .switch__button--selected {
+        p {
+          color: $dark;
+        }
+      }
+    }
+
+    .center-container__projects-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

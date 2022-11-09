@@ -3,7 +3,7 @@
     <div class="header__container">
       <!-- logo -->
       <div class="container__logo">
-        <router-link to="/">
+        <router-link to="/#intro">
           <img src="@/assets/img/staticLogo.svg" alt="logo" />
         </router-link>
       </div>
@@ -17,13 +17,13 @@
             </router-link>
           </li>
           <li class="link-container__link">
-            <router-link to="/experience">
+            <router-link to="/#experience">
               <span>02.</span>
               Experience
             </router-link>
           </li>
           <li class="link-container__link">
-            <router-link to="/projects">
+            <router-link to="/#projects">
               <span>03.</span>
               Projects
             </router-link>

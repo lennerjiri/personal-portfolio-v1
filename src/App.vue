@@ -29,7 +29,6 @@ const loadingFunction = () => {
       closeAnimation.value = true;
     } else {
       // for that we use recursion
-
       return loadingFunction();
     }
   }, 1000);
@@ -57,9 +56,6 @@ onMounted(() => {
         ease: "power4.inOut",
       },
     });
-
-    //TODO - fix container logo to also include hamburger menu
-    //TODO - Include hamburger menu
 
     TL.from(".container__logo", {
       y: -50,

@@ -1,0 +1,113 @@
+@import "../../assets/styles/variables.styles.scss";
+@import "../../assets/styles/mixins.styles.scss";
+
+.projects-container__most-recent-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .most-recent-container__project {
+    width: 100%;
+    margin-bottom: 8rem;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+
+    .project__image-container {
+      width: 50rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-radius: 0.25rem;
+
+      visibility: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.25rem;
+        filter: grayscale(100%);
+        transition: filter 0.1s ease-in-out;
+
+        &:hover {
+          filter: grayscale(0%);
+        }
+      }
+    }
+
+    .project__text-container {
+      visibility: hidden;
+      .text-container__heading {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+
+        h3 {
+          font-family: $font-text;
+          color: $dark;
+          font-size: 1.75rem;
+          font-weight: 400;
+        }
+
+        > div {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          gap: 1rem;
+          > a {
+            text-decoration: none;
+            svg {
+              font-size: 1.5rem;
+              color: $light-dark;
+              transition: color 0.1s ease-in-out;
+            }
+
+            &:hover {
+              cursor: pointer;
+              svg {
+                color: $dark;
+              }
+            }
+          }
+        }
+      }
+      .text-container__description {
+        margin-bottom: 1.5rem;
+
+        @include large-text;
+        max-width: none;
+      }
+      .text-container__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+
+        .footer__technologies {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          transition: color 0.1s ease-in-out;
+
+          a {
+            display: inline-block;
+            text-decoration: none;
+            font-family: $font-mono;
+            color: $light-dark;
+            font-size: 1rem;
+            font-weight: 400;
+
+            &:hover {
+              cursor: pointer;
+              color: $dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,14 @@
 @import "./assets/styles/variables.styles.scss";
 
+::selection {
+  background: #dedede; /* WebKit/Blink Browsers */
+}
+
 .root {
   width: 100vw;
   min-height: 100vh;
   position: relative;
+  transition: height 0.25s ease-in-out;
 }
 
 .root-scrollOff {
