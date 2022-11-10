@@ -217,7 +217,11 @@ const offLoadingCompleted = () => {
       >
       <div class="social-networks__line"></div>
     </div>
-    <footer></footer>
+    <footer>
+      <p class="footer__text">
+        Made with <font-awesome-icon icon="fa-solid fa-heart" /> by Jiří Lenner
+      </p>
+    </footer>
   </div>
 </template>
 

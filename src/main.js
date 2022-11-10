@@ -23,6 +23,7 @@ import {
 import {
   faCaretRight,
   faUpRightFromSquare,
+  faHeart,
 } from "@fortawesome/pro-solid-svg-icons";
 
 import { faFolder } from "@fortawesome/pro-regular-svg-icons";
@@ -36,7 +37,8 @@ library.add(
   faDribbble,
   faCaretRight,
   faUpRightFromSquare,
-  faFolder
+  faFolder,
+  faHeart
 );
 
 // Styles Setup

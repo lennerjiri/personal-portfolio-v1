@@ -80,6 +80,8 @@
       p {
         @include large-text;
         margin-top: 2rem;
+        max-width: none;
+        text-align: justify;
         margin-left: 2rem;
       }
       P:nth-child(2) {
@@ -96,6 +98,8 @@
         @include large-text;
         margin-top: 2rem;
         margin-left: 2rem;
+        text-align: justify;
+        max-width: none;
       }
       > P:nth-child(2) {
         margin-top: 4rem;
