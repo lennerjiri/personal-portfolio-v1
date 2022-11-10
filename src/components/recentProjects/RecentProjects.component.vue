@@ -18,11 +18,19 @@
           <h3>{{ project.name }}</h3>
           <div>
             <!-- Links -->
-            <a v-if="project.links.github" :href="project.links.github">
+            <a
+              target="_blank"
+              v-if="project.links.github"
+              :href="project.links.github"
+            >
               <font-awesome-icon icon="fa-brands fa-github" />
             </a>
 
-            <a v-if="project.links.hosting" :href="project.links.hosting">
+            <a
+              target="_blank"
+              v-if="project.links.hosting"
+              :href="project.links.hosting"
+            >
               <font-awesome-icon icon="fa-solid fa-up-right-from-square" />
             </a>
           </div>
@@ -38,6 +46,7 @@
           <div class="footer__technologies">
             <!-- technologies -->
             <a
+              target="_blank"
               v-for="technology of project.technologies"
               :key="project.technologies.indexOf(technology)"
               :href="technology.link"

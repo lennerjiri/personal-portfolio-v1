@@ -58,88 +58,97 @@ const selectedSwitch = ref(0);
 const projectsData = ref([
   {
     _id: 0,
-    name: "Knedkliky",
+    name: "Kraslice ecommerce",
     links: {
-      github: "https://github.com/lennerjiri/projekt_vejce_frontend",
+      github:
+        "https://github.com/lennerjiri/kraslice-ecommerce-frontend-v1.git",
       hosting: "https://kraslicelennerova.cz/",
     },
     frontImage: "kraslice1.webp",
     shortDescriptionRecent: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod,",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod, ",
+      "Ecommerce website for grandmothers business of selling easter eggs and art.",
+      "My goal was to create a large and easy to use platform for her and her customers.",
     ],
     shortDescriptionArchive:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel asdf nisl euismo sssdd as fas dfasdfasdfs ed vel nisl euismo, ",
+      "Ecommerce website for grandmothers business of selling easter eggs and art.",
     technologies: [
       {
         name: "Vue.js",
         link: "https://vuejs.org/",
       },
       {
-        name: "Nuxt.js",
-        link: "https://nuxtjs.org/",
+        name: "Express.js",
+        link: "https://expressjs.com/",
       },
       {
-        name: "Node.js",
-        link: "https://nodejs.org/en/",
+        name: "Vuetify",
+        link: "https://vuetifyjs.com/en/",
       },
     ],
   },
   {
     _id: 1,
-    name: "Kraslice Ecommerce",
+    name: "Flowershop Frida",
     links: {
-      github: "https://github.com/lennerjiri/projekt_vejce_frontend",
-      hosting: "https://kraslicelennerova.cz/",
+      github: "https://github.com/ssps-cajthaml/3-mvop-wbf-zp-1",
     },
-    frontImage: "kraslice1.webp",
+    frontImage: "frida1.webp",
     shortDescriptionRecent: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod,",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod, ",
+      "I designed and build a website for a local flower shop in collaboration with several of my friends.",
+      "We needed to an artistic UI which would represent the flowershop atmosphere.",
     ],
     shortDescriptionArchive:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel asdf nisl euismo sssdd as fas dfasdfasdfs ed vel nisl euismo,  ",
+      "I designed and build a website for a local flower shop in collaboration with several of my friends.",
     technologies: [
       {
         name: "Vue.js",
         link: "https://vuejs.org/",
-      },
-      {
-        name: "Nuxt.js",
-        link: "https://nuxtjs.org/",
-      },
-      {
-        name: "Node.js",
-        link: "https://nodejs.org/en/",
       },
     ],
   },
   {
     _id: 2,
-    name: "Pantofle Ecommerce",
+    name: "Portfolio template",
     links: {
-      github: "https://github.com/lennerjiri/projekt_vejce_frontend",
-      hosting: "https://kraslicelennerova.cz/",
+      github: "https://github.com/lennerjiri/portfolio-template.git",
     },
-    frontImage: "kraslice1.webp",
+    frontImage: "template1.webp",
     shortDescriptionRecent: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod,",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisl euismod, ",
+      "I build a Wordpress template for my math teacher to use to support his private lesson business.",
+      "I wanted to make the page and especially the content management as easy to use as possible.",
     ],
     shortDescriptionArchive:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel asdf nisl euismo sssdd as fas dfasdfasdfs ed vel nisl euismo, ",
+      "I build a Wordpress template for my math teacher to use to support his private lesson business.",
+    technologies: [
+      {
+        name: "HTML",
+      },
+      {
+        name: "CSS",
+      },
+      {
+        name: "Wordpress",
+        link: "https://wordpress.com/",
+      },
+    ],
+  },
+  {
+    _id: 2,
+    name: "Monkey clicker game",
+    links: {
+      github: "https://github.com/lennerjiri/monkey-clicker.git",
+    },
+    frontImage: "monkey2.webp",
+    shortDescriptionRecent: [
+      "A fun project for my brothers birthday. My goal was to solidify my knowledge of Vue.js.",
+      "Building something other than a website proved to be an interesting, but challenging venture.",
+    ],
+    shortDescriptionArchive:
+      "A fun project for my brothers birthday. I wanted to solidify my newly gained knowledge of Vue.js and create a fun game for him.",
     technologies: [
       {
         name: "Vue.js",
         link: "https://vuejs.org/",
-      },
-      {
-        name: "Nuxt.js",
-        link: "https://nuxtjs.org/",
-      },
-      {
-        name: "Node.js",
-        link: "https://nodejs.org/en/",
       },
     ],
   },
