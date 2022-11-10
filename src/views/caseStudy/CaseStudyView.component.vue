@@ -77,7 +77,10 @@
             :key="project.allImages.indexOf(image)"
             class="image-grid__img-container"
           >
-            <img :src="`/src/assets/img/projects/${image}`" alt="" />
+            <img
+              :src="dynamicImages[project.allImages.indexOf(image)]"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -87,7 +90,7 @@
 
 <script setup>
 import { useRoute } from "vue-router";
-import { onMounted } from "vue";
+import { onMounted, computed } from "vue";
 import { useDataStore } from "@/stores/data.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -99,6 +102,15 @@ const route = useRoute();
 gsap.registerPlugin(ScrollTrigger);
 
 const project = store.getProjectById(route.params.id);
+// Images
+const dynamicImages = computed(() => {
+  const images = [];
+
+  for (const image of project.allImages) {
+    images.push(new URL(`/src/assets/img/projects/${image}`, import.meta.url));
+  }
+  return images;
+});
 
 onMounted(() => {
   window.scrollTo({
@@ -164,7 +176,7 @@ onMounted(() => {
       trigger: ".center-container__case-study-gallery",
       start: "top 75%",
       end: "top 25%",
-      markers: true,
+      //markers: true,
     },
     x: -50,
     autoAlpha: 0,

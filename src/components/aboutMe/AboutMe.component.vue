@@ -31,11 +31,7 @@
       </div>
       <div class="center-container__right-container">
         <div class="right-container__image-highlight">
-          <img
-            class="image-highlight__image"
-            src="../../assets/img/IMG_1408 4.jpg"
-            alt=""
-          />
+          <img class="image-highlight__image" :src="imageUrl" alt="" />
         </div>
       </div>
     </div>
@@ -48,6 +44,8 @@ import { onMounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
+const imageUrl = new URL("/src/assets/img/profilePhoto.jpg", import.meta.url);
 
 onMounted(() => {
   gsap
