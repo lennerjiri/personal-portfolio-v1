@@ -1,11 +1,14 @@
 @import "../../assets/styles/variables.styles.scss";
 
 header {
-  height: 5rem;
-  box-shadow: $box-shadow;
-
+  height: 6rem;
+  width: 100%;
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  background-color: #ffff;
+  z-index: 100;
 
   > .header__container {
     width: calc(100% - 4rem);
@@ -21,7 +24,7 @@ header {
       width: 4rem;
     }
 
-    .container__linkContainer {
+    .container__link-container {
       > ul {
         display: flex;
         align-items: center;
@@ -55,7 +58,7 @@ header {
           }
         }
 
-        .linkContainer__ul__resumeButton {
+        .link-button {
           font-family: "Barlow", sans-serif;
           font-weight: 500;
           font-size: 1rem;
@@ -70,6 +73,7 @@ header {
           border-radius: 0.3rem;
 
           color: $dark;
+          display: inline-block;
 
           &:hover {
             cursor: pointer;

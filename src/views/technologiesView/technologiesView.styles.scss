@@ -1,0 +1,231 @@
+@import "../../assets/styles/variables.styles.scss";
+
+.main__page-container {
+  width: 70%;
+  max-width: 1000px;
+  min-height: calc(100vh);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .page-container__center-container {
+    width: 100%;
+    min-height: 125.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .center-container__technologies-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-top: 20rem;
+
+      > h2 {
+        font-family: $font-text;
+        color: $dark;
+        font-size: clamp(1rem, 8vw, 3rem);
+        font-weight: 500;
+      }
+      p {
+        margin-top: 0.5rem;
+        font-family: $font-text;
+        color: $light-dark;
+        font-size: clamp(0.5rem, 8vw, 1.5rem);
+        font-weight: 400;
+      }
+    }
+
+    .center-container__tree-container {
+      margin-top: 3rem;
+      margin-bottom: 10rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      position: relative;
+
+      // Tree root
+
+      .tree-container__tree-root {
+        width: 0.25rem;
+        height: 87.5rem;
+        background-color: $dark;
+        position: relative;
+        &::before {
+          content: "►";
+          font-size: 2rem;
+          color: $dark;
+          position: absolute;
+          bottom: -1.5rem;
+          left: -1rem;
+          transform: rotate(90deg);
+        }
+
+        .tree-root__infinity {
+          position: absolute;
+          bottom: -5rem;
+          font-family: $font-text;
+          font-size: 4rem;
+          color: $dark;
+          left: -1.25rem;
+        }
+      }
+
+      // Tree normal
+
+      .tree-container__tree-branch--normal {
+        position: absolute;
+        top: 5rem;
+        right: 0;
+
+        display: flex;
+        align-items: center;
+
+        .tree-text {
+          font-family: $font-mono;
+          color: $dark;
+          font-size: clamp(0.5rem, 8vw, 1.25rem);
+          font-weight: 400;
+          position: absolute;
+          right: 100%;
+          width: 10rem;
+        }
+        > div {
+          background-color: $dark;
+          height: 0.25rem;
+          width: 3rem;
+        }
+      }
+
+      .tree-container__tree-branch--normal--1 {
+        @extend .tree-container__tree-branch--normal;
+        top: 12.5rem;
+        > div {
+          width: 7.5rem;
+        }
+      }
+      .tree-container__tree-branch--normal--2 {
+        @extend .tree-container__tree-branch--normal;
+        top: 27.5rem;
+        > div {
+          width: 7.5rem;
+        }
+        .tree-text {
+          right: 60%;
+        }
+      }
+      .tree-container__tree-branch--normal--3 {
+        @extend .tree-container__tree-branch--normal;
+        top: 35rem;
+        .tree-text {
+          right: -120%;
+        }
+      }
+      .tree-container__tree-branch--normal--4 {
+        @extend .tree-container__tree-branch--normal;
+        top: 42.5rem;
+
+        .tree-text {
+          width: 15rem;
+          right: 200%;
+        }
+      }
+      .tree-container__tree-branch--normal--5 {
+        @extend .tree-container__tree-branch--normal;
+        top: 57.5rem;
+      }
+      .tree-container__tree-branch--normal--6 {
+        @extend .tree-container__tree-branch--normal;
+        top: 65rem;
+        .tree-text {
+          right: 0%;
+        }
+      }
+      .tree-container__tree-branch--normal--7 {
+        @extend .tree-container__tree-branch--normal;
+        top: 72.5rem;
+        > div {
+          width: 6rem;
+        }
+        .tree-text {
+          right: 70%;
+        }
+      }
+      .tree-container__tree-branch--normal--8 {
+        @extend .tree-container__tree-branch--normal;
+        top: 80rem;
+        .tree-text {
+          right: -110%;
+        }
+      }
+
+      // Tree years
+
+      .tree-container__tree-branch--year {
+        position: absolute;
+
+        display: flex;
+        align-items: center;
+
+        .tree-text {
+          font-family: $font-mono;
+          color: $dark;
+          font-size: clamp(0.5rem, 8vw, 1.25rem);
+          font-weight: 400;
+          position: absolute;
+          right: 100%;
+          width: 10rem;
+        }
+        > div {
+          background-color: $dark;
+          height: 0.25rem;
+          width: 6rem;
+        }
+
+        .tree-year {
+          font-family: $font-mono;
+          color: $dark;
+          font-size: clamp(0.5rem, 8vw, 1.25rem);
+          font-weight: 400;
+          position: absolute;
+          left: 135%;
+          width: 10rem;
+        }
+      }
+
+      .tree-container__tree-branch--year--1 {
+        @extend .tree-container__tree-branch--year;
+        top: 5rem;
+      }
+      .tree-container__tree-branch--year--2 {
+        @extend .tree-container__tree-branch--year;
+        top: 20rem;
+        .tree-text {
+          right: 25%;
+        }
+      }
+
+      .tree-container__tree-branch--year--3 {
+        @extend .tree-container__tree-branch--year;
+        top: 50rem;
+        right: -3rem;
+        > div {
+          width: 12rem;
+        }
+
+        .tree-text {
+          left: -75%;
+        }
+        .tree-year {
+          left: 115%;
+        }
+      }
+    }
+  }
+}
