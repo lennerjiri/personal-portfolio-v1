@@ -6,6 +6,7 @@ export const useDataStore = defineStore("dataStore", () => {
   const projects = reactive([
     {
       _id: "kraslice-ecommerce",
+      date: "2022",
       name: "Kraslice ecommerce",
       links: {
         github:
@@ -33,9 +34,17 @@ export const useDataStore = defineStore("dataStore", () => {
           link: "https://vuetifyjs.com/en/",
         },
       ],
+      allImages: [
+        "kraslice1.webp",
+        "kraslice2.webp",
+        "kraslice3.webp",
+        "kraslice4.webp",
+        "kraslice5.webp",
+      ],
     },
     {
       _id: "flowershop-frida",
+      date: "2022",
       name: "Flowershop Frida",
       links: {
         github: "https://github.com/ssps-cajthaml/3-mvop-wbf-zp-1",
@@ -53,9 +62,39 @@ export const useDataStore = defineStore("dataStore", () => {
           link: "https://vuejs.org/",
         },
       ],
+      allImages: [
+        "frida1.webp",
+        "frida2.webp",
+        "frida3.webp",
+        "frida4.webp",
+        "frida5.webp",
+      ],
+    },
+    {
+      _id: "monkey-clicker-game",
+      date: "2022",
+      name: "Monkey clicker game",
+      links: {
+        github: "https://github.com/lennerjiri/monkey-clicker.git",
+      },
+      frontImage: "monkey2.webp",
+      shortDescriptionRecent: [
+        "A fun project for my brothers birthday. My goal was to solidify my knowledge of Vue.js.",
+        "Building something other than a website proved to be an interesting, but challenging venture.",
+      ],
+      shortDescriptionArchive:
+        "A fun project for my brothers birthday. I wanted to solidify my newly gained knowledge of Vue.js and create a fun game for him.",
+      technologies: [
+        {
+          name: "Vue.js",
+          link: "https://vuejs.org/",
+        },
+      ],
+      allImages: ["monkey1.webp", "monkey2.webp", "monkey3.webp"],
     },
     {
       _id: "portfolio-template",
+      date: "2021",
       name: "Portfolio template",
       links: {
         github: "https://github.com/lennerjiri/portfolio-template.git",
@@ -79,25 +118,13 @@ export const useDataStore = defineStore("dataStore", () => {
           link: "https://wordpress.com/",
         },
       ],
-    },
-    {
-      _id: "monkey-clicker-game",
-      name: "Monkey clicker game",
-      links: {
-        github: "https://github.com/lennerjiri/monkey-clicker.git",
-      },
-      frontImage: "monkey2.webp",
-      shortDescriptionRecent: [
-        "A fun project for my brothers birthday. My goal was to solidify my knowledge of Vue.js.",
-        "Building something other than a website proved to be an interesting, but challenging venture.",
-      ],
-      shortDescriptionArchive:
-        "A fun project for my brothers birthday. I wanted to solidify my newly gained knowledge of Vue.js and create a fun game for him.",
-      technologies: [
-        {
-          name: "Vue.js",
-          link: "https://vuejs.org/",
-        },
+      allImages: [
+        "template1.webp",
+        "template2.webp",
+        "template3.webp",
+        "template4.webp",
+        "template5.webp",
+        "template6.webp",
       ],
     },
   ]);
