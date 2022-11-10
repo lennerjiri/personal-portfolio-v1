@@ -30,9 +30,12 @@
         {{ project.shortDescriptionArchive }}
       </p>
       <div class="archive-project__technologies">
-        <p>Vue.js</p>
-        <p>nuxtjs</p>
-        <p>TypeScript</p>
+        <p
+          v-for="technology of project.technologies.slice(0, 3)"
+          :key="project.technologies.indexOf(technology)"
+        >
+          {{ technology.name }}
+        </p>
       </div>
     </div>
   </div>

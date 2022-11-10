@@ -47,7 +47,7 @@
             <!-- technologies -->
             <a
               target="_blank"
-              v-for="technology of project.technologies"
+              v-for="technology of project.technologies.slice(0, 3)"
               :key="project.technologies.indexOf(technology)"
               :href="technology.link"
               >{{ technology.name }}</a

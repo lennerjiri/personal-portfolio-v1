@@ -30,17 +30,11 @@
             The Project
           </h3>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam atque
-          nesciunt, nemo autem dolorem reiciendis ad animi laboriosam doloribus.
-          Blanditiis soluta optio facilis! Inventore sed quo at, placeat
-          perspiciatis nesciunt.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam atque
-          nesciunt, nemo autem dolorem reiciendis ad animi laboriosam doloribus.
-          Blanditiis soluta optio facilis! Inventore sed quo at, placeat
-          perspiciatis nesciunt.
+        <p
+          v-for="projectDescription of project.projectDescription"
+          :key="project.projectDescription.indexOf(projectDescription)"
+        >
+          {{ projectDescription }}
         </p>
       </div>
       <div class="center-container__case-study-solution">
@@ -50,17 +44,11 @@
             The Solution
           </h3>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam atque
-          nesciunt, nemo autem dolorem reiciendis ad animi laboriosam doloribus.
-          Blanditiis soluta optio facilis! Inventore sed quo at, placeat
-          perspiciatis nesciunt.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam atque
-          nesciunt, nemo autem dolorem reiciendis ad animi laboriosam doloribus.
-          Blanditiis soluta optio facilis! Inventore sed quo at, placeat
-          perspiciatis nesciunt.
+        <p
+          v-for="projectSolution of project.projectSolution"
+          :key="project.projectSolution.indexOf(projectSolution)"
+        >
+          {{ projectSolution }}
         </p>
         <div class="case-study-solution__solution-tech">
           <p class="solution-tech__sign">Dev Stack:</p>
