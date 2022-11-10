@@ -3,7 +3,7 @@
     <div class="header__container">
       <!-- logo -->
       <div class="container__logo">
-        <a href="/">
+        <a href="">
           <img src="@/assets/img/staticLogo.svg" alt="logo" />
         </a>
       </div>

@@ -11,7 +11,7 @@
           order: projectsData.indexOf(project) % 2 === 0 ? 0 : 1,
         }"
       >
-        <img :src="`/src/assets/img/projects/${project.frontImage}`" alt="" />
+        <img :src="dynamicImages[projectsData.indexOf(project)]" alt="" />
       </div>
       <div class="project__text-container">
         <div class="text-container__heading">
@@ -68,7 +68,17 @@
 <script setup>
 import Button from "@/components/button/LinkButton.component.vue";
 import { gsap } from "gsap";
-import { onMounted } from "vue";
+import { onMounted, computed } from "vue";
+
+const dynamicImages = computed(() => {
+  const images = [];
+  for (const project of props.projectsData) {
+    images.push(
+      new URL(`/src/assets/img/projects/${project.frontImage}`, import.meta.url)
+    );
+  }
+  return images;
+});
 
 // get data from props
 const props = defineProps({
