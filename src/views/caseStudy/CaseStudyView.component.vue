@@ -2,14 +2,21 @@
   <div class="main__case-study-container">
     <div class="case-study-container__center-container">
       <div class="center-container__case-study-header">
-        <p>Build in: 2022</p>
-        <h2>Kraslice Ecommerce</h2>
+        <p>Build in:</p>
+        <h2>{{ project.name }}</h2>
         <div class="case-study-header__liks">
-          <a target="_blank" v-if="true" href="/">
+          <a
+            target="_blank"
+            v-if="project.links.github"
+            :href="project.links.github"
+          >
             <font-awesome-icon icon="fa-brands fa-github" />
           </a>
-
-          <a target="_blank" v-if="true" href="/">
+          <a
+            target="_blank"
+            v-if="project.links.hosting"
+            :href="project.links.hosting"
+          >
             <font-awesome-icon icon="fa-solid fa-up-right-from-square" />
           </a>
         </div>
@@ -58,9 +65,13 @@
         <div class="case-study-solution__solution-tech">
           <p>Dev Stack:</p>
           <div class="solution-tech__dev-stack">
-            <a href="">Algolia</a>
-            <a href="">Rust</a>
-            <a href="">Nuxt</a>
+            <a
+              v-for="technology of project.technologies"
+              :key="project.technologies.indexOf(technology)"
+              :href="technology.link"
+              target="_blank"
+              >{{ technology.name }}</a
+            >
           </div>
         </div>
       </div>
@@ -96,7 +107,15 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRoute } from "vue-router";
+import { useDataStore } from "@/stores/data.js";
+
+const store = useDataStore();
+const route = useRoute();
+
+const project = store.getProjectById(route.params.id);
+</script>
 
 <style lang="scss" scoped>
 @import "./caseStudyView.styles.scss";

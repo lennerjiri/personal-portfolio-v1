@@ -54,7 +54,11 @@
             >
           </div>
           <!-- button -->
-          <Button class="footer__button" text="Case study" />
+          <Button
+            class="footer__button"
+            :link="`/case-study/${project._id}`"
+            text="Case study"
+          />
         </div>
       </div>
     </div>
