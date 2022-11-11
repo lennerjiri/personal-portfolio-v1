@@ -15,6 +15,12 @@
     display: flex;
     justify-content: space-between;
     gap: 3rem;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .center-container__left-container {
       .left-container__about-heading {
         display: flex;
@@ -32,6 +38,7 @@
             color: $light-dark;
           }
         }
+
         .about-heading__divider {
           height: 0.2rem;
           background-color: $light-dark;
@@ -39,6 +46,24 @@
           flex-grow: 1;
         }
       }
+
+      @media screen and (max-width: 1000px) {
+        .left-container__about-heading {
+          > h2 {
+            font-size: 1.75rem;
+            min-width: 12rem;
+          }
+        }
+      }
+      @media screen and (max-width: 750px) {
+        .left-container__about-heading {
+          > h2 {
+            font-size: 1.5rem;
+            min-width: 10rem;
+          }
+        }
+      }
+
       p {
         @include large-text;
         max-width: none;
@@ -69,6 +94,15 @@
           border-radius: 0.25rem;
           transition: top 0.1s ease-in-out, left 0.1s ease-in-out,
             filter 0.1s ease-in-out;
+
+          @media screen and (max-width: 450px) {
+            top: 1.25rem;
+            left: 1.25rem;
+          }
+          @media screen and (max-width: 350px) {
+            top: 1rem;
+            left: 1rem;
+          }
         }
 
         &:hover {
@@ -76,6 +110,30 @@
             filter: grayscale(0%);
             top: 1rem;
             left: 1rem;
+
+            @media screen and (max-width: 450px) {
+              top: 0.75rem;
+              left: 0.75rem;
+            }
+            @media screen and (max-width: 350px) {
+              top: 0.65rem;
+              left: 0.65rem;
+            }
+          }
+        }
+
+        @media screen and (max-width: 450px) {
+          min-width: 250px;
+          min-height: 250px;
+          img {
+            max-width: 250px;
+          }
+        }
+        @media screen and (max-width: 375px) {
+          min-width: 200px;
+          min-height: 200px;
+          img {
+            max-width: 200px;
           }
         }
       }

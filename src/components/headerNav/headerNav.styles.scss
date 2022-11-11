@@ -22,6 +22,11 @@ header {
     .container__logo {
       height: 4rem;
       width: 4rem;
+
+      @media screen and (max-width: 1000px) {
+        height: 3.5rem;
+        width: 3.5rem;
+      }
     }
 
     .hamburgerMenu {
@@ -34,6 +39,11 @@ header {
 
       @media screen and (max-width: 900px) {
         display: block;
+      }
+
+      @media screen and (max-width: 1000px) {
+        height: 3.5rem;
+        width: 3.5rem;
       }
     }
 
