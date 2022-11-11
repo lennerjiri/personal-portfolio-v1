@@ -3,7 +3,7 @@
     <div class="header__container">
       <!-- logo -->
       <div class="container__logo">
-        <a href="">
+        <a href="/">
           <img src="@/assets/img/staticLogo.svg" alt="logo" />
         </a>
       </div>
@@ -64,7 +64,7 @@ import { gsap } from "gsap";
 let previousScroll = null;
 
 const openPdf = () => {
-  window.open("/src/assets/other/resume-lenner-jiri.pdf", "fullscreen=yes");
+  window.open("./resume-lenner-jiri.pdf", "fullscreen=yes");
 };
 
 window.addEventListener("scroll", () => {
