@@ -27,6 +27,7 @@ const loadingFunction = () => {
   setTimeout(() => {
     if (document.readyState === "complete" && openAnimation.value) {
       closeAnimation.value = true;
+      console.log("close animation - app");
     } else {
       // for that we use recursion
       return loadingFunction();
@@ -135,6 +136,7 @@ onMounted(() => {
 // onLoading animation played emit
 const onLoadingCompleted = () => {
   openAnimation.value = true;
+  console.log("animation - first half - app");
 };
 
 // offLoading animation played emit
