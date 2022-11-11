@@ -9,7 +9,7 @@
 
 <script setup>
 // SVG component
-import svgLoading from "@/assets/img/svgLoading.component.vue";
+import svgLoading from "@/components/loadingScreen/SvgLoading.component.vue";
 import { gsap } from "gsap";
 
 // SVG emits
