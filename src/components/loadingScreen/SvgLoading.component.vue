@@ -89,9 +89,6 @@ const emit = defineEmits(["onLoadingCompleted", "offLoadingCompleted"]);
 
 // Svg onLoad
 const svgLoaded = (event) => {
-  // fix this so that the animation first plays and then emits the event
-  // run the animation and put on callback function
-
   console.log("svg loaded");
 
   svgEvent = event;
