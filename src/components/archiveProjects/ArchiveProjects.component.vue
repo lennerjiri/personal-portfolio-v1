@@ -4,6 +4,7 @@
       class="project-archive-container__archive-project"
       v-for="project of projectsData"
       :key="project._id"
+      @click="$router.push(`/case-study/${project._id}`)"
     >
       <div class="archive-project__links-container">
         <font-awesome-icon icon="fa-regular fa-folder" />
