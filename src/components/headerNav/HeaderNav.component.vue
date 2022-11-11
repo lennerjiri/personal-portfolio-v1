@@ -48,7 +48,7 @@
         </ul>
       </div>
       <!-- hamburger -->
-      <div class="container__hamburgerMenu" v-if="false">
+      <div class="container__hamburgerMenu hamburgerMenu" v-if="true">
         <HamburgerMenu />
       </div>
     </div>
@@ -56,7 +56,7 @@
 </template>
 
 <script setup>
-import HamburgerMenu from "@/assets/img/svgHamburgerMenu.component.vue";
+import HamburgerMenu from "@/components/headerNav/svgHamburgerMenu.component.vue";
 import Button from "@/components/button/LinkButton.component.vue";
 
 import { gsap } from "gsap";

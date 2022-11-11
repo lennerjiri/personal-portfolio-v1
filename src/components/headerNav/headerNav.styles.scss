@@ -24,6 +24,19 @@ header {
       width: 4rem;
     }
 
+    .hamburgerMenu {
+      height: 4rem;
+      width: 4rem;
+      display: none;
+      &:hover {
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 900px) {
+        display: block;
+      }
+    }
+
     .container__link-container {
       > ul {
         display: flex;
@@ -56,6 +69,10 @@ header {
               color: $light-dark;
             }
           }
+        }
+
+        @media screen and (max-width: 900px) {
+          display: none;
         }
 
         .link-button {
