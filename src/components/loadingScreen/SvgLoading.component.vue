@@ -75,10 +75,12 @@ let svgEvent;
 
 // SVG emits
 const onLoadEnd = () => {
+  console.log("svg On load");
   emit("onLoadingCompleted");
 };
 
 const offLoadEnd = () => {
+  console.log("svg off load");
   emit("offLoadingCompleted");
 };
 
@@ -90,6 +92,8 @@ const svgLoaded = (event) => {
   // fix this so that the animation first plays and then emits the event
   // run the animation and put on callback function
 
+  console.log("svg loaded");
+
   svgEvent = event;
   svgEvent.target.svgatorPlayer.play();
   svgEvent.target.svgatorPlayer.on("end", onLoadEnd);
@@ -100,6 +104,8 @@ const closeAnimation = inject("closeAnimation");
 watch(
   () => closeAnimation.value,
   () => {
+    console.log("svg close animation");
+
     svgEvent.target.svgatorPlayer.reverse();
     svgEvent.target.svgatorPlayer.on("stop", offLoadEnd);
   }
@@ -107,6 +113,7 @@ watch(
 
 // SVG animation and embeded player
 onMounted(() => {
+  console.log("svg mounted");
   !(function (t, e) {
     "object" == typeof exports && "undefined" != typeof module
       ? (module.exports = e())
