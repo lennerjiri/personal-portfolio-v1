@@ -10,39 +10,34 @@ const route = useRoute();
 
 // SVG Loading Screen
 const loading = ref(true);
-let openAnimation = ref(false);
-const closeAnimation = ref(false);
-
-// Injection values to the SVG
-// provide("openAnimation", openAnimation);
-// provide("closeAnimation", closeAnimation);
 
 // GSAP Timeline init
 let TL;
 
-// Loading system
-// const loadingFunction = () => {
-//   // opening animation runs on its own once the loading screen is mounted
-//   // set timeout waits until the animation plays and the page content is loaded
-//   setTimeout(() => {
-//     if (document.readyState === "complete" && openAnimation.value) {
-//       closeAnimation.value = true;
-//       console.log("close animation - app");
-//     } else {
-//       // for that we use recursion
-//       return loadingFunction();
-//     }
-//   }, 1000);
-// };
+//Loading system
+const loadingFunction = () => {
+  setTimeout(() => {
+    if (document.readyState === "complete") {
+      loading.value = false;
+      nextTick(() => {
+        if (route.hash) {
+          const el = document.getElementById(route.hash.slice(1));
 
-// watch(
-//   () => loading.value,
-//   (val) => {
-//     if (val) {
-//       loadingFunction();
-//     }
-//   }
-// );
+          if (el) {
+            el.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }
+        TL.play();
+      });
+    } else {
+      // for that we use recursion
+      return loadingFunction();
+    }
+  }, 5);
+};
 
 // Trigger loading system when app is mounted only at specific route
 onMounted(() => {
@@ -56,7 +51,6 @@ onMounted(() => {
         ease: "power4.inOut",
       },
     });
-
     TL.from(".container__logo", {
       y: -50,
       autoAlpha: 0,
@@ -123,11 +117,7 @@ onMounted(() => {
           duration: 0.3,
         },
         "<"
-      )
-      .add(() => {
-        loading.value = false;
-      });
-
+      );
     document.onreadystatechange = () => {
       loadingFunction();
     };
@@ -135,34 +125,6 @@ onMounted(() => {
     loading.value = false;
   }
 });
-
-// onLoading animation played emit
-const onLoadingCompleted = () => {
-  openAnimation.value = true;
-  console.log("animation - first half - app");
-};
-
-// offLoading animation played emit
-const offLoadingCompleted = () => {
-  // close the loading screen
-  TL.play();
-  loading.value = false;
-
-  nextTick(() => {
-    if (route.hash) {
-      const el = document.getElementById(route.hash.slice(1));
-
-      if (el) {
-        el.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }
-  });
-};
-
-// Scroll and top menu snap
 </script>
 
 <template>
