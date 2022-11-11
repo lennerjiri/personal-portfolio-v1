@@ -1,0 +1,104 @@
+@import "./assets/styles/variables.styles.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #dedede; /* WebKit/Blink Browsers */
+}
+
+.root {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  transition: height 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.root-scrollOff {
+  height: 100vh;
+  overflow: hidden;
+}
+
+// bottom social links
+
+.root__social-networks {
+  position: fixed;
+  bottom: 0;
+  left: 3.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+
+  > a {
+    > svg {
+      transform: translate(0px, 0px);
+      font-size: 1.3rem;
+      color: $dark;
+      transition: color 0.1s ease-in-out;
+      transition: transform 0.1s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        color: $light-dark;
+        transform: translateY(-0.15rem);
+      }
+    }
+  }
+}
+
+.root__email {
+  position: fixed;
+  bottom: 0;
+  right: 4.15rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > a {
+    position: absolute;
+
+    font-size: 1rem;
+    font-family: $font-mono;
+
+    transform: rotate(90deg);
+    color: $dark;
+    text-decoration: none;
+
+    bottom: 14rem;
+
+    &:hover {
+      cursor: pointer;
+      color: $light-dark;
+    }
+  }
+}
+
+.social-networks__line {
+  width: 0.1rem;
+  height: 7rem;
+  background-color: $dark;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  p {
+    font-size: 0.8rem;
+    font-family: $font-mono;
+    color: $light-dark;
+    padding: 1rem;
+  }
+}

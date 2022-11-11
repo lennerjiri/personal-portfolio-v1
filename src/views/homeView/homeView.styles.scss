@@ -1,0 +1,11 @@
+@import "../../assets/styles/variables.styles.scss";
+@import "../../assets/styles/mixins.styles.scss";
+
+.main__page-container {
+  width: 70%;
+  max-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

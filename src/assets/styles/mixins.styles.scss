@@ -1,0 +1,8 @@
+@mixin large-text {
+  font-family: $font-text;
+  color: $light-dark;
+  line-height: 1.75rem;
+  font-size: clamp(0.75rem, 3vw, 1.25rem);
+  max-width: 37rem;
+  font-weight: 300;
+}
