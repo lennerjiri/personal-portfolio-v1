@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView, useRoute } from "vue-router";
 import { ref, onMounted, provide, watch, nextTick } from "vue";
-import LoadingScreen from "@/components/loadingScreen/LoadingScreen.component.vue";
+//import LoadingScreen from "@/components/loadingScreen/LoadingScreen.component.vue";
 import HeaderNav from "@/components/headerNav/HeaderNav.component.vue";
 import { gsap } from "gsap";
 
@@ -14,35 +14,35 @@ let openAnimation = ref(false);
 const closeAnimation = ref(false);
 
 // Injection values to the SVG
-provide("openAnimation", openAnimation);
-provide("closeAnimation", closeAnimation);
+// provide("openAnimation", openAnimation);
+// provide("closeAnimation", closeAnimation);
 
 // GSAP Timeline init
 let TL;
 
 // Loading system
-const loadingFunction = () => {
-  // opening animation runs on its own once the loading screen is mounted
-  // set timeout waits until the animation plays and the page content is loaded
-  setTimeout(() => {
-    if (document.readyState === "complete" && openAnimation.value) {
-      closeAnimation.value = true;
-      console.log("close animation - app");
-    } else {
-      // for that we use recursion
-      return loadingFunction();
-    }
-  }, 1000);
-};
+// const loadingFunction = () => {
+//   // opening animation runs on its own once the loading screen is mounted
+//   // set timeout waits until the animation plays and the page content is loaded
+//   setTimeout(() => {
+//     if (document.readyState === "complete" && openAnimation.value) {
+//       closeAnimation.value = true;
+//       console.log("close animation - app");
+//     } else {
+//       // for that we use recursion
+//       return loadingFunction();
+//     }
+//   }, 1000);
+// };
 
-watch(
-  () => loading.value,
-  (val) => {
-    if (val) {
-      loadingFunction();
-    }
-  }
-);
+// watch(
+//   () => loading.value,
+//   (val) => {
+//     if (val) {
+//       loadingFunction();
+//     }
+//   }
+// );
 
 // Trigger loading system when app is mounted only at specific route
 onMounted(() => {
@@ -50,7 +50,7 @@ onMounted(() => {
     // loading screen is only shown on the home page
 
     TL = gsap.timeline({
-      paused: true,
+      // paused: true,
       defaults: {
         duration: 0.5,
         ease: "power4.inOut",
@@ -123,7 +123,10 @@ onMounted(() => {
           duration: 0.3,
         },
         "<"
-      );
+      )
+      .add(() => {
+        loading.value = false;
+      });
 
     document.onreadystatechange = () => {
       loadingFunction();
@@ -164,11 +167,11 @@ const offLoadingCompleted = () => {
 
 <template>
   <div class="root" :class="{ 'root-scrollOff': loading }">
-    <LoadingScreen
+    <!-- <LoadingScreen
       v-if="loading"
       @onLoadingCompleted="onLoadingCompleted"
       @offLoadingCompleted="offLoadingCompleted"
-    />
+    /> -->
     <HeaderNav />
     <main>
       <RouterView v-slot="{ Component }">
