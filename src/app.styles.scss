@@ -102,3 +102,46 @@ footer {
     padding: 1rem;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .root__social-networks {
+    left: 3rem;
+  }
+  .root__email {
+  }
+
+  .social-networks__line {
+  }
+}
+@media screen and (max-width: 800px) {
+  .root__social-networks {
+    left: 2.5rem;
+  }
+  .root__email {
+    right: 2.5rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .root__social-networks {
+    left: 2.5rem;
+  }
+  .root__email {
+    right: 2.5rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .root__social-networks {
+    left: 2rem;
+  }
+  .root__email {
+    right: 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .root__social-networks {
+    display: none;
+  }
+  .root__email {
+    display: none;
+  }
+}

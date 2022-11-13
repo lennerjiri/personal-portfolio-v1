@@ -68,12 +68,21 @@ const jobs = [
     ],
   },
   {
+    name: "STRV",
+    position: "Student / Intern",
+    date: "2022",
+    description: [
+      "During the summer of 2022, I was looking for a way to further enhance my skills. I found out about the STRV Academy, which is a 3 month long selective program, where I was able to work alongside STRV developers on real projects and learn from the best in the industry.",
+      "The reason I joined this Academy, was because I needed to improve my backend development skills in Node.js and learn techniques from experts in this field for my upcoming projects this year. First, however, I had to pass a tech interview and prove my knowledge of Node.js and backend development before being accepted. At STRV I certainly learned a lot and acquired valuable experience and connections, that will last for a lifetime.",
+    ],
+  },
+  {
     name: "Apploud Digital",
     position: "Intermediate Frontend developer",
     date: "2022 - present",
     description: [
-      "In the recent months, I have been looking for a way to further develop my skills. The best opportunity I have met so far was a job offer from a company called Applaud Digital. ",
-      "At the moment, I am working on improving my skills of TypeScript language extension and also further building on my SSR skills in Nuxt.js. The requirements to acquire this job are high, however, I believe that I will soon be capable of accepting this offer and further continue my journey as a part-time developer. ",
+      "In recent months, I have been looking for a way to further develop my skills. The best opportunity, so far, was a job offer from the company Applaud Digital. I find this company especially interesting, because compared to my previous work experiences, they, as a company, are significantly smaller, which allows them to be less conservative about the technology and work principles they use and stay open to new technologies on the market.",
+      "At the moment, I am working on improving my skills of TypeScript language extension and also building on my SSR skills in Nuxt.js. The requirements for this job are high, however, I will soon be capable of accepting their offer and further continue my journey as a part-time developer.",
     ],
   },
 ];
