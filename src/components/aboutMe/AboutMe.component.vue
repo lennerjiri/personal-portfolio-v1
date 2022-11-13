@@ -10,22 +10,21 @@
           <div class="about-heading__divider"></div>
         </div>
         <p>
-          I am a student working as a full stack web developer and UI/UX
+          I am a student working as a fullstack web developer and user interface
           designer aside.
           <br />
           <br />
-          My job as a web developer is to develop World Wide Web applications. I
-          am responsible for the coding, design and layout of web applications
-          and I my goal is to deliver my clients a solution they will want to
-          print and hang on wall. Otherwise said, a work of art.
+          My job is to develop Web applications. I am responsible for the
+          coding, design, and layout of web applications. My goal is to deliver
+          my clients a solution that they will want to print and hang on wall.
           <br />
           <br />
           As you can guess, I am an admirer of art, but a web developer can also
-          be referred to as a web programmer or a web application developer.
-          Apart from building clientside user interfaces, I also specialise in
-          building custom backend systems for data storing and manipulation.
-          Combining these two worlds can as I believe create the very best user
-          experience! Find out more about the
+          be a web programmer or a web application developer. Apart from
+          building client-side user interfaces, I also specialize in building
+          custom backend systems for data storage and manipulation. Combining
+          these two worlds can create the very best user experience. Find out
+          more about the
           <router-link to="/technologies"> technologies I use! </router-link>
         </p>
       </div>
