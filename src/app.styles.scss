@@ -1,20 +1,25 @@
 @import "./assets/styles/variables.styles.scss";
 
-html {
-  scroll-behavior: smooth;
-}
-
 ::selection {
   background: #dedede; /* WebKit/Blink Browsers */
 }
 
-.root {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   width: 100vw;
+  max-width: 100%;
   min-height: 100vh;
   position: relative;
   transition: height 0.25s ease-in-out;
   display: flex;
   flex-direction: column;
+}
+
+.root {
+  width: 100%;
 }
 
 .root-scrollOff {
