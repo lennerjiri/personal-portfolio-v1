@@ -7,8 +7,8 @@
           Contact me
         </h2>
         <p>
-          Interested in working with me? <br />
-          Feel free to drop me a message via my email, social media or by this
+          Interested in working with me?<br />
+          Feel free to drop me a message via email, social media, or by this
           form!
         </p>
       </div>

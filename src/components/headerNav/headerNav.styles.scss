@@ -22,6 +22,29 @@ header {
     .container__logo {
       height: 4rem;
       width: 4rem;
+
+      @media screen and (max-width: 1000px) {
+        height: 3.5rem;
+        width: 3.5rem;
+      }
+    }
+
+    .hamburgerMenu {
+      height: 4rem;
+      width: 4rem;
+      display: none;
+      &:hover {
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 900px) {
+        display: block;
+      }
+
+      @media screen and (max-width: 1000px) {
+        height: 3.5rem;
+        width: 3.5rem;
+      }
     }
 
     .container__link-container {
@@ -56,6 +79,10 @@ header {
               color: $light-dark;
             }
           }
+        }
+
+        @media screen and (max-width: 900px) {
+          display: none;
         }
 
         .link-button {

@@ -2,7 +2,7 @@
   <div class="main__case-study-container">
     <div class="case-study-container__center-container">
       <div class="center-container__case-study-header">
-        <p>Build in: {{ project.date }}</p>
+        <p>Built in: {{ project.date }}</p>
         <h2>{{ project.name }}</h2>
         <div class="case-study-header__links">
           <a
