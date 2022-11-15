@@ -143,7 +143,7 @@ onMounted(() => {
       </RouterView>
     </main>
     <div class="root__social-networks">
-      <a target="_blank" href="https://discordapp.com/users/NutShell#2761">
+      <a target="_blank" href="https://discord.com/users/426809360107307019/">
         <font-awesome-icon
           icon="fa-brands fa-discord"
           class="social-networks__icon"
