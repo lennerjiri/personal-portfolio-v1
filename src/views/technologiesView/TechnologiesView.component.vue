@@ -26,7 +26,7 @@
         <div class="tree-container__tree-branch--year--2">
           <p class="tree-text">SCSS</p>
           <div></div>
-          <p class="tree-year">2020</p>
+          <p class="tree-year">2021</p>
         </div>
         <div class="tree-container__tree-branch--normal--2">
           <p class="tree-text">Vue.js</p>
@@ -43,7 +43,7 @@
         <div class="tree-container__tree-branch--year--3">
           <p class="tree-text">Vue.js 3</p>
           <div></div>
-          <p class="tree-year">2020</p>
+          <p class="tree-year">2022</p>
         </div>
         <div class="tree-container__tree-branch--normal--5">
           <p class="tree-text">TypeScript</p>
